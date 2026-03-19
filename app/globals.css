@@ -4,12 +4,11 @@
   --background: #f6f2eb;
   --background-soft: #efe8de;
   --foreground: #1f2733;
-  --foreground-soft: rgba(31, 39, 51, 0.8);
+  --foreground-soft: rgba(31, 39, 51, 0.82);
   --foreground-faint: rgba(31, 39, 51, 0.52);
   --line: rgba(31, 39, 51, 0.1);
   --line-strong: rgba(31, 39, 51, 0.16);
   --accent: #8b7a5d;
-  --accent-soft: rgba(139, 122, 93, 0.12);
   --danger: #b15e5e;
 }
 
@@ -68,8 +67,8 @@ svg {
 .frame-lines::after {
   content: "";
   position: fixed;
-  left: 22px;
-  right: 22px;
+  left: 16px;
+  right: 16px;
   height: 1px;
   background: var(--line);
   pointer-events: none;
@@ -77,11 +76,11 @@ svg {
 }
 
 .frame-lines::before {
-  top: 22px;
+  top: 16px;
 }
 
 .frame-lines::after {
-  bottom: 22px;
+  bottom: 16px;
 }
 
 @media (min-width: 640px) {
@@ -89,6 +88,14 @@ svg {
   .frame-lines::after {
     left: 36px;
     right: 36px;
+  }
+
+  .frame-lines::before {
+    top: 22px;
+  }
+
+  .frame-lines::after {
+    bottom: 22px;
   }
 }
 
@@ -101,7 +108,7 @@ svg {
 }
 
 .container-shell {
-  width: min(100% - 2rem, 1240px);
+  width: min(100% - 2.25rem, 1240px);
   margin-inline: auto;
 }
 
@@ -122,7 +129,7 @@ svg {
   top: 0;
   z-index: 40;
   backdrop-filter: blur(14px);
-  background: rgba(248, 245, 239, 0.9);
+  background: rgba(248, 245, 239, 0.92);
   border-bottom: 1px solid var(--line);
 }
 
@@ -211,7 +218,7 @@ svg {
   }
 }
 
-/* Desktop invariato */
+/* Desktop */
 .page-shell {
   min-height: calc(100vh - 126px);
   display: flex;
@@ -226,41 +233,43 @@ svg {
   margin-inline: auto;
 }
 
-/* Mobile-first correction */
+/* Mobile corrections */
 @media (max-width: 767px) {
   .page-shell {
     min-height: auto;
     display: block;
-    padding: 2rem 0 3.25rem;
+    padding: 2rem 0 3.5rem;
   }
 
   .page-content {
     max-width: 100%;
+    padding-inline: 0.15rem;
   }
 
   .page-title {
-    font-size: clamp(2.35rem, 11vw, 3.4rem);
+    font-size: clamp(2.6rem, 14vw, 4.4rem);
     line-height: 0.94;
+    letter-spacing: -0.04em;
   }
 
   .section-title {
-    font-size: clamp(2rem, 9vw, 3rem);
+    font-size: clamp(2rem, 10vw, 3.2rem);
     line-height: 0.98;
   }
 
   .sub-title {
-    font-size: clamp(1.35rem, 6vw, 1.8rem);
-    line-height: 1.1;
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+    line-height: 1.08;
   }
 
   .body-copy {
-    font-size: 1rem;
-    line-height: 1.9;
+    font-size: 0.98rem;
+    line-height: 1.85;
   }
 
   .kicker {
     font-size: 0.68rem;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.26em;
   }
 }
 
@@ -375,8 +384,20 @@ svg {
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(248, 245, 239, 0.96);
+  background: rgba(248, 245, 239, 0.97);
   backdrop-filter: blur(10px);
+}
+
+.founder-image-shell {
+  aspect-ratio: 4 / 5;
+  min-height: 240px;
+}
+
+@media (max-width: 767px) {
+  .founder-image-shell {
+    aspect-ratio: 4 / 5;
+    min-height: 320px;
+  }
 }
 
 @keyframes pageFadeIn {

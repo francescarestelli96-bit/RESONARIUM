@@ -12,6 +12,13 @@ type ContactErrors = {
   message?: string;
 };
 
+type Founder = {
+  role: string;
+  name: string;
+  bio: string;
+  image: string;
+};
+
 const LOGO_SRC = '/Resonarium_logo_blacknobg.png';
 
 const NAV_ITEMS: {
@@ -42,8 +49,9 @@ const CONTENT = {
     aboutKicker: 'Chi siamo',
     aboutTitle: 'Una comunità di ricerca artistica e scientifica',
     aboutParagraphs: [
-      'Associazione Culturale Resonarium è costituita come associazione senza fini di lucro con sede a Milano, in Via degli Ottoboni 37; la sua durata è illimitata salvo scioglimento deliberato dall’assemblea. Tra i suoi scopi figurano la promozione della cultura musicale, filosofica e scientifica, l’organizzazione di concerti, festival e rassegne, di masterclass e corsi di perfezionamento musicale, di attività didattiche e divulgative, nonché il sostegno a giovani musicisti e ricercatori. Lo statuto prevede inoltre collaborazioni con scuole, conservatori, università, accademie ed enti di ricerca, insieme alla possibilità di pubblicare materiali e sostenere borse di studio. :contentReference[oaicite:0]{index=0}',
-      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Elia Tarizzo, Alberto Chines ed Edoardo Toffoletto. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore didattico, definendo da subito un impianto operativo orientato sia alla direzione culturale sia alla formazione. :contentReference[oaicite:1]{index=1}',
+      'Associazione Culturale Resonarium è costituita come associazione senza fini di lucro con sede a Milano, in Via degli Ottoboni 37; la sua durata è illimitata salvo scioglimento deliberato dall’assemblea. Tra i suoi scopi figurano la promozione della cultura musicale, filosofica e scientifica, l’organizzazione di concerti, festival e rassegne, di masterclass e corsi di perfezionamento musicale, di attività didattiche e divulgative, nonché il sostegno a giovani musicisti e ricercatori.',
+      'Lo statuto prevede inoltre collaborazioni con scuole, conservatori, università, accademie ed enti di ricerca, insieme alla possibilità di pubblicare materiali e sostenere borse di studio.',
+      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Elia Tarizzo, Alberto Chines ed Edoardo Toffoletto. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore scientifico, definendo da subito un impianto operativo orientato alla direzione culturale, alla progettazione artistica e alla ricerca.',
     ],
 
     foundersTitle: 'Fondatori',
@@ -51,22 +59,22 @@ const CONTENT = {
       {
         role: 'Presidente',
         name: 'Elia Tarizzo',
-        bio: 'Socio fondatore e Presidente del primo Consiglio Direttivo. Nato a Parigi il 28 novembre 2001, rappresenta legalmente l’associazione e ne coordina l’indirizzo istituzionale. :contentReference[oaicite:2]{index=2}',
+        bio: 'Socio fondatore e Presidente del primo Consiglio Direttivo. Coordina l’indirizzo istituzionale dell’associazione e ne segue la rappresentanza legale e la visione generale.',
         image: '/founder-elia.jpg',
       },
       {
         role: 'Direttore artistico',
         name: 'Alberto Chines',
-        bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Nato a Palermo il 19 novembre 1988, contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. :contentReference[oaicite:3]{index=3}',
+        bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium.',
         image: '/founder-alberto.jpg',
       },
       {
         role: 'Direttore scientifico',
         name: 'Edoardo Toffoletto',
-        bio: 'Socio fondatore e Direttore scientifico del primo Consiglio Direttivo. Nato a Milano il 10 maggio 1991, segue in particolare la dimensione scientifica e i percorsi di studio promossi dall’associazione. Attualmente, è professore a contratto di Questioni contemporanee all’Institut Catholique de Paris, collaboratore del Teatro Franco Parenti di Milano. I suoi interessi di ricerca incrociano l’estetica e la psicanalisi, l’antropologia e la storia del pensiero politico e economico. :contentReference[oaicite:4]{index=4}',
+        bio: 'Socio fondatore e Direttore scientifico del primo Consiglio Direttivo. Nato a Milano il 10 maggio 1991, segue in particolare la dimensione scientifica e i percorsi di studio promossi dall’associazione. Attualmente, è professore a contratto di Questioni contemporanee all’Institut Catholique de Paris, collaboratore del Teatro Franco Parenti di Milano. I suoi interessi di ricerca incrociano l’estetica e la psicanalisi, l’antropologia e la storia del pensiero politico e economico.',
         image: '/founder-edoardo.jpg',
       },
-    ],
+    ] as Founder[],
 
     visionKicker: 'Vision',
     visionTitle: "L’ascolto come pratica di conoscenza e rigore metodologico",
@@ -80,26 +88,26 @@ const CONTENT = {
     activitiesTitle:
       'Formazione accademica, concerti, masterclass e ricerca culturale',
     activitiesIntro:
-      'Per il raggiungimento dei propri scopi l’associazione può organizzare concerti e spettacoli, masterclass musicali, artistiche e culturali, seminari, conferenze e convegni, nonché promuovere riviste, materiali didattici e divulgativi, collaborazioni con enti pubblici e privati, partecipazione a bandi culturali e sostegno tramite borse di studio. :contentReference[oaicite:5]{index=5}',
+      'Per il raggiungimento dei propri scopi l’associazione può organizzare concerti e spettacoli, masterclass musicali, artistiche e culturali, seminari, conferenze e convegni, nonché promuovere materiali didattici e divulgativi, collaborazioni con enti pubblici e privati, partecipazione a bandi culturali e sostegno tramite borse di studio.',
     activitiesItems: [
       {
         title: 'Concerti, festival e rassegne',
-        text: 'Tra gli scopi statutari rientrano l’organizzazione di concerti, festival e rassegne e, più in generale, la promozione di eventi culturali e artistici. Resonarium intende quindi costruire programmi pubblici capaci di unire qualità musicale, consapevolezza curatoriale e apertura interdisciplinare. :contentReference[oaicite:6]{index=6}',
+        text: 'Tra gli scopi dell’associazione rientrano l’organizzazione di concerti, festival e rassegne e, più in generale, la promozione di eventi culturali e artistici. Resonarium intende quindi costruire programmi pubblici capaci di unire qualità musicale, consapevolezza curatoriale e apertura interdisciplinare.',
       },
       {
         title: 'Masterclass, corsi e attività didattiche',
-        text: 'Lo statuto prevede masterclass, corsi di perfezionamento musicale e attività didattiche e divulgative, rivolte in particolare a giovani musicisti e ricercatori. La dimensione formativa non è intesa come semplice trasmissione tecnica, ma come costruzione di contesti di studio esigenti e culturalmente articolati. :contentReference[oaicite:7]{index=7}',
+        text: 'Lo statuto prevede masterclass, corsi di perfezionamento musicale e attività didattiche e divulgative, rivolte in particolare a giovani musicisti e ricercatori. La dimensione formativa non è intesa come semplice trasmissione tecnica, ma come costruzione di contesti di studio esigenti e culturalmente articolati.',
       },
       {
         title: 'Ricerca, pubblicazioni e collaborazioni',
-        text: 'L’associazione può collaborare con scuole, conservatori, università, accademie, enti di ricerca e soggetti pubblici o privati, pubblicare materiali didattici o divulgativi, partecipare a bandi culturali e sviluppare progetti di ricerca scientifica e filosofica. Questa cornice rende Resonarium una struttura pensata non soltanto per produrre eventi, ma anche per sostenere ricerca, scrittura e lavoro culturale continuativo. :contentReference[oaicite:8]{index=8}',
+        text: 'L’associazione può collaborare con scuole, conservatori, università, accademie, enti di ricerca e soggetti pubblici o privati, pubblicare materiali didattici o divulgativi e sviluppare progetti di ricerca scientifica e filosofica. Questa cornice rende Resonarium una struttura pensata non soltanto per produrre eventi, ma anche per sostenere ricerca, scrittura e lavoro culturale continuativo.',
       },
     ],
 
     contactsKicker: 'Contatti',
     contactsTitle: 'Contatti e sede',
     contactsParagraphs: [
-      'La sede di Resonarium si trova a Milano, in Via degli Ottoboni 37. Lo statuto consente al Consiglio direttivo di istituire sedi operative o sezioni in altre città, ma la sede legale resta nel Comune di Milano. ',
+      'La sede di Resonarium si trova a Milano, in Via degli Ottoboni 37. Il Consiglio direttivo può istituire sedi operative o sezioni in altre città, ma la sede legale resta nel Comune di Milano.',
       'Per collaborazioni, progetti, attività formative o richieste istituzionali, l’associazione può essere contattata tramite i riferimenti indicati di seguito oppure mediante il modulo presente in questa pagina.',
     ],
     addressLabel: 'Sede',
@@ -123,6 +131,7 @@ const CONTENT = {
     footerLeft: 'RESONARIUM © 2026 | MILANO',
     footerCredits: 'Credits',
     footerPolicy: 'Policy',
+    imageMissing: 'Immagine non disponibile',
   },
 
   en: {
@@ -142,8 +151,9 @@ const CONTENT = {
     aboutKicker: 'About',
     aboutTitle: 'A community of artistic and scientific research',
     aboutParagraphs: [
-      'The Cultural Association Resonarium is established as a non-profit association based in Milan, Via degli Ottoboni 37; its duration is unlimited unless dissolved by the members’ assembly. Its statutory aims include the promotion of musical, philosophical, and scientific culture; the organisation of concerts, festivals, and series; masterclasses and advanced musical training; educational and public outreach activities; and support for young musicians and researchers. The statute also provides for collaborations with schools, conservatories, universities, academies, and research bodies, together with publications and scholarships. :contentReference[oaicite:10]{index=10}',
-      'The association is formally founded through the deed of incorporation signed by the three founding members Elia Tarizzo, Alberto Chines, and Edoardo Toffoletto. The first Board appoints them respectively as President, Artistic Director, and Educational Director, establishing from the outset an operational structure oriented toward both cultural direction and education. :contentReference[oaicite:11]{index=11}',
+      'The Cultural Association Resonarium is established as a non-profit association based in Milan, Via degli Ottoboni 37; its duration is unlimited unless dissolved by the members’ assembly. Its aims include the promotion of musical, philosophical, and scientific culture, the organisation of concerts, festivals, and series, masterclasses and advanced musical training, educational and public outreach activities, and support for young musicians and researchers.',
+      'The statute also provides for collaborations with schools, conservatories, universities, academies, and research bodies, together with the possibility of producing publications and supporting scholarships.',
+      'The association is formally founded through the deed of incorporation signed by the three founding members Elia Tarizzo, Alberto Chines, and Edoardo Toffoletto. The first Board appoints them respectively as President, Artistic Director, and Scientific Director, establishing from the outset an operational structure devoted to cultural direction, artistic planning, and research.',
     ],
 
     foundersTitle: 'Founders',
@@ -151,22 +161,22 @@ const CONTENT = {
       {
         role: 'President',
         name: 'Elia Tarizzo',
-        bio: 'Founding member and President of the first Board of Directors. Born in Paris on 28 November 2001, he legally represents the association and coordinates its institutional direction. :contentReference[oaicite:12]{index=12}',
+        bio: 'Founding member and President of the first Board of Directors. He coordinates the institutional direction of the association and follows its legal representation and general vision.',
         image: '/founder-elia.jpg',
       },
       {
         role: 'Artistic Director',
         name: 'Alberto Chines',
-        bio: 'Founding member and Artistic Director of the first Board of Directors. Born in Palermo on 19 November 1988, he contributes to the cultural orientation and artistic programming of Resonarium. :contentReference[oaicite:13]{index=13}',
+        bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium.',
         image: '/founder-alberto.jpg',
       },
       {
-        role: 'Educational Director',
+        role: 'Scientific Director',
         name: 'Edoardo Toffoletto',
-        bio: 'Founding member and Educational Director of the first Board of Directors. Born in Milan on 10 May 1991, he is particularly involved in the association’s educational dimension and study programmes. :contentReference[oaicite:14]{index=14}',
+        bio: 'Founding member and Scientific Director of the first Board of Directors. Born in Milan on 10 May 1991, he is particularly responsible for the scientific dimension and the study paths promoted by the association. He is currently adjunct professor of Contemporary Questions at the Institut Catholique de Paris and collaborator of Teatro Franco Parenti in Milan. His research interests bring together aesthetics and psychoanalysis, anthropology, and the history of political and economic thought.',
         image: '/founder-edoardo.jpg',
       },
-    ],
+    ] as Founder[],
 
     visionKicker: 'Vision',
     visionTitle: 'Listening as a practice of knowledge and methodological rigor',
@@ -180,26 +190,26 @@ const CONTENT = {
     activitiesTitle:
       'Academic formation, concerts, masterclasses, and cultural research',
     activitiesIntro:
-      'To pursue its aims, the association may organise concerts and performances, musical, artistic, and cultural masterclasses, seminars, conferences, and symposia, as well as journals, teaching materials, collaborations with public and private bodies, participation in cultural calls, and support through scholarships. :contentReference[oaicite:15]{index=15}',
+      'To pursue its aims, the association may organise concerts and performances, musical, artistic, and cultural masterclasses, seminars, conferences, and symposia, as well as educational materials, collaborations with public and private bodies, participation in cultural calls, and support through scholarships.',
     activitiesItems: [
       {
         title: 'Concerts, festivals, and series',
-        text: 'Among the statutory aims are the organisation of concerts, festivals, and series, and more broadly the promotion of cultural and artistic events. Resonarium therefore seeks to build public programmes capable of combining musical quality, curatorial awareness, and interdisciplinary openness. :contentReference[oaicite:16]{index=16}',
+        text: 'Among the association’s aims are the organisation of concerts, festivals, and series, and more broadly the promotion of cultural and artistic events. Resonarium therefore seeks to build public programmes capable of combining musical quality, curatorial awareness, and interdisciplinary openness.',
       },
       {
         title: 'Masterclasses, courses, and educational activities',
-        text: 'The statute provides for masterclasses, advanced musical training courses, and educational and outreach activities, especially for young musicians and researchers. The educational dimension is not intended as mere technical transmission, but as the construction of demanding and culturally articulated contexts of study. :contentReference[oaicite:17]{index=17}',
+        text: 'The statute provides for masterclasses, advanced musical training courses, and educational and outreach activities, especially for young musicians and researchers. The educational dimension is not intended as mere technical transmission, but as the construction of demanding and culturally articulated contexts of study.',
       },
       {
         title: 'Research, publications, and collaborations',
-        text: 'The association may collaborate with schools, conservatories, universities, academies, research institutions, and both public and private bodies; publish educational or outreach materials; take part in cultural funding calls; and develop scientific and philosophical research projects. This framework makes Resonarium a structure conceived not only to produce events, but also to support research, writing, and sustained cultural work. :contentReference[oaicite:18]{index=18}',
+        text: 'The association may collaborate with schools, conservatories, universities, academies, research institutions, and both public and private bodies; publish educational materials; and develop scientific and philosophical research projects. This framework makes Resonarium a structure conceived not only to produce events, but also to support research, writing, and sustained cultural work.',
       },
     ],
 
     contactsKicker: 'Contacts',
     contactsTitle: 'Contacts and headquarters',
     contactsParagraphs: [
-      'Resonarium is based in Milan, Via degli Ottoboni 37. The statute allows the Board of Directors to establish operational branches or sections in other cities, but the legal headquarters remain in the municipality of Milan. ',
+      'Resonarium is based in Milan, Via degli Ottoboni 37. The Board of Directors may establish operational branches or sections in other cities, but the legal headquarters remain in the municipality of Milan.',
       'For collaborations, projects, educational initiatives, or institutional enquiries, the association may be contacted through the references below or by means of the form on this page.',
     ],
     addressLabel: 'Headquarters',
@@ -223,6 +233,7 @@ const CONTENT = {
     footerLeft: 'RESONARIUM © 2026 | MILAN',
     footerCredits: 'Credits',
     footerPolicy: 'Policy',
+    imageMissing: 'Image unavailable',
   },
 } satisfies Record<Language, any>;
 
@@ -265,13 +276,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-14 w-36 sm:h-16 sm:w-44">
+    <div className="relative h-16 w-44">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.25]"
+        className="object-contain scale-[1.55]"
       />
     </div>
   );
@@ -296,22 +307,27 @@ function FounderCard({
   name,
   bio,
   image,
-}: {
-  role: string;
-  name: string;
-  bio: string;
-  image: string;
-}) {
+  imageMissingLabel,
+}: Founder & { imageMissingLabel: string }) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <article className="grid gap-5 border-t border-[var(--line)] pt-8 md:grid-cols-[180px_1fr] md:gap-8">
-      <div className="overflow-hidden rounded-[20px] bg-[var(--background-soft)]">
-        <Image
-          src={image}
-          alt={name}
-          width={720}
-          height={960}
-          className="h-full w-full object-cover"
-        />
+      <div className="founder-image-shell overflow-hidden rounded-[20px] bg-[var(--background-soft)]">
+        {!imageError ? (
+          <Image
+            src={image}
+            alt={name}
+            width={720}
+            height={960}
+            className="h-full w-full object-cover"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="flex h-full min-h-[inherit] items-center justify-center px-6 text-center text-sm text-[var(--foreground-faint)]">
+            {imageMissingLabel}
+          </div>
+        )}
       </div>
 
       <div>
@@ -500,16 +516,13 @@ function AboutSection({ language }: { language: Language }) {
         <div className="mt-14">
           <p className="kicker">{text.foundersTitle}</p>
           <div className="mt-8 space-y-10">
-            {text.founders.map(
-              (founder: {
-                role: string;
-                name: string;
-                bio: string;
-                image: string;
-              }) => (
-                <FounderCard key={founder.name} {...founder} />
-              )
-            )}
+            {text.founders.map((founder) => (
+              <FounderCard
+                key={founder.name}
+                {...founder}
+                imageMissingLabel={text.imageMissing}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -550,23 +563,15 @@ function ActivitiesSection({ language }: { language: Language }) {
         </div>
 
         <div className="mt-12 space-y-10">
-          {text.activitiesItems.map(
-            (
-              item: {
-                title: string;
-                text: string;
-              },
-              index: number
-            ) => (
-              <section key={item.title} className="border-t border-[var(--line)] pt-8">
-                <p className="kicker">{String(index + 1).padStart(2, '0')}</p>
-                <h3 className="sub-title mt-5">{item.title}</h3>
-                <div className="body-copy mt-6 max-w-5xl">
-                  <p>{item.text}</p>
-                </div>
-              </section>
-            )
-          )}
+          {text.activitiesItems.map((item, index) => (
+            <section key={item.title} className="border-t border-[var(--line)] pt-8">
+              <p className="kicker">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="sub-title mt-5">{item.title}</h3>
+              <div className="body-copy mt-6 max-w-5xl">
+                <p>{item.text}</p>
+              </div>
+            </section>
+          ))}
         </div>
       </div>
     </section>
@@ -812,7 +817,7 @@ export default function Page() {
 
           {mobileMenuOpen && (
             <div className="mobile-menu-overlay menu-fade-in md:hidden">
-              <div className="container-shell flex min-h-screen flex-col px-0 py-8">
+              <div className="container-shell flex min-h-screen flex-col py-8">
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => navigateTo('home')}
