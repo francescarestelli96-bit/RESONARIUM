@@ -211,6 +211,7 @@ svg {
   }
 }
 
+/* Desktop invariato */
 .page-shell {
   min-height: calc(100vh - 126px);
   display: flex;
@@ -219,17 +220,48 @@ svg {
   padding: 3.5rem 0 5rem;
 }
 
-@media (min-width: 1024px) {
-  .page-shell {
-    min-height: calc(100vh - 138px);
-    padding: 4.5rem 0 5.5rem;
-  }
-}
-
 .page-content {
   width: 100%;
   max-width: 980px;
   margin-inline: auto;
+}
+
+/* Mobile-first correction */
+@media (max-width: 767px) {
+  .page-shell {
+    min-height: auto;
+    display: block;
+    padding: 2rem 0 3.25rem;
+  }
+
+  .page-content {
+    max-width: 100%;
+  }
+
+  .page-title {
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
+    line-height: 0.94;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .sub-title {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+    line-height: 1.1;
+  }
+
+  .body-copy {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+  }
 }
 
 .secondary-button {
@@ -339,6 +371,14 @@ svg {
   text-align: center;
 }
 
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(248, 245, 239, 0.96);
+  backdrop-filter: blur(10px);
+}
+
 @keyframes pageFadeIn {
   from {
     opacity: 0;
@@ -374,6 +414,15 @@ svg {
   }
 }
 
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .fade-in {
   animation: pageFadeIn 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -384,6 +433,10 @@ svg {
 
 .splash-fade-out {
   animation: splashFadeOut 560ms ease both;
+}
+
+.menu-fade-in {
+  animation: menuFadeIn 180ms ease both;
 }
 
 * {
