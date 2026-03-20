@@ -59,7 +59,7 @@ const CONTENT = {
       {
         role: 'Presidente',
         name: 'Elia Tarizzo',
-        bio: 'Socio fondatore e Presidente del primo Consiglio Direttivo. Coordina l’indirizzo istituzionale dell’associazione e ne segue la rappresentanza legale e la visione generale.',
+        bio: 'Nato a Parigi nel 28/11/2001. Ha studiato composizione, violino e pianoforte. Si laurea in Filosofia nel 2024 presso l’università Statale di Milano. Attualmente studia Medicina e chirurgia nell’università Vita-Salute San Raffaele.',
         image: '/founder-elia.jpg',
       },
       {
