@@ -167,7 +167,7 @@ svg {
 }
 
 .kicker {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   line-height: 1;
   letter-spacing: 0.34em;
   text-transform: uppercase;
@@ -175,31 +175,35 @@ svg {
 }
 
 .page-title {
-  font-size: clamp(3.1rem, 7vw, 7rem);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  font-style: italic;
+  font-size: clamp(2.45rem, 4.7vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: 0.06em;
+  font-style: normal;
+  text-transform: lowercase;
+  font-variant-caps: all-small-caps;
   color: var(--foreground);
 }
 
 .section-title {
-  font-size: clamp(2.6rem, 5vw, 5rem);
-  line-height: 0.94;
-  letter-spacing: -0.025em;
-  font-style: italic;
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: 0.05em;
+  font-style: normal;
+  text-transform: lowercase;
+  font-variant-caps: all-small-caps;
   color: var(--foreground);
 }
 
 .sub-title {
-  font-size: clamp(1.6rem, 2.7vw, 2.4rem);
-  line-height: 1.05;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.08;
   font-style: italic;
   color: var(--foreground);
 }
 
 .body-copy {
-  font-size: 1.06rem;
-  line-height: 2.02;
+  font-size: 1.04rem;
+  line-height: 2;
   color: var(--foreground-soft);
 }
 
@@ -213,12 +217,11 @@ svg {
 
 @media (min-width: 768px) {
   .body-copy {
-    font-size: 1.1rem;
-    line-height: 2.08;
+    font-size: 1.08rem;
+    line-height: 2.05;
   }
 }
 
-/* Desktop */
 .page-shell {
   min-height: calc(100vh - 126px);
   display: flex;
@@ -233,7 +236,6 @@ svg {
   margin-inline: auto;
 }
 
-/* Mobile corrections */
 @media (max-width: 767px) {
   .page-shell {
     min-height: auto;
@@ -247,28 +249,29 @@ svg {
   }
 
   .page-title {
-    font-size: clamp(2.6rem, 14vw, 4.4rem);
-    line-height: 0.94;
-    letter-spacing: -0.04em;
+    font-size: clamp(2rem, 9.5vw, 3rem);
+    line-height: 1;
+    letter-spacing: 0.05em;
   }
 
   .section-title {
-    font-size: clamp(2rem, 10vw, 3.2rem);
-    line-height: 0.98;
+    font-size: clamp(1.65rem, 8vw, 2.45rem);
+    line-height: 1.04;
+    letter-spacing: 0.04em;
   }
 
   .sub-title {
-    font-size: clamp(1.45rem, 7vw, 1.9rem);
+    font-size: clamp(1.35rem, 6.6vw, 1.8rem);
     line-height: 1.08;
   }
 
   .body-copy {
     font-size: 0.98rem;
-    line-height: 1.85;
+    line-height: 1.82;
   }
 
   .kicker {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     letter-spacing: 0.26em;
   }
 }

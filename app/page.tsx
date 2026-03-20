@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type SectionKey = 'home' | 'chi-siamo' | 'vision' | 'attivita' | 'contatti';
 type Language = 'it' | 'en';
@@ -40,18 +40,18 @@ const CONTENT = {
     close: 'Chiudi',
 
     homeKicker: 'Milano · Associazione culturale',
-    homeTitle: 'RESONARIUM',
+    homeTitle: 'Resonarium',
     homeParagraphs: [
-      'RESONARIUM si presenta come una piattaforma culturale dedicata all’indagine del suono nelle sue dimensioni estetiche, sociali e conoscitive. La sua attività si sviluppa tra musica, formazione, ricerca e progettazione interdisciplinare, con l’obiettivo di costruire un luogo di lavoro intellettuale e artistico capace di tenere insieme rigore metodologico, qualità curatoriale e apertura pubblica.',
-      'In questa prospettiva, l’associazione promuove pratiche di ascolto, percorsi di studio e occasioni di confronto in cui il suono viene considerato non soltanto come fenomeno artistico, ma come campo di esperienza, di relazione e di lettura del presente.',
+      'Resonarium è un’associazione culturale con sede a Milano, attiva nell’ambito della musica, della formazione e della ricerca interdisciplinare. La sua attività è orientata alla costruzione di contesti di studio, ascolto e produzione culturale, con particolare attenzione al rapporto tra pratica artistica, riflessione teorica e trasmissione dei saperi.',
+      'L’associazione promuove iniziative rivolte a musicisti, studiosi, studenti e pubblico interessato, favorendo occasioni di approfondimento e collaborazione in cui il fenomeno sonoro possa essere affrontato come oggetto artistico, culturale e scientifico.',
     ],
 
     aboutKicker: 'Chi siamo',
-    aboutTitle: 'Una comunità di ricerca artistica e scientifica',
+    aboutTitle: 'Profilo istituzionale e ambiti di attività',
     aboutParagraphs: [
       'Associazione Culturale Resonarium è costituita come associazione senza fini di lucro con sede a Milano, in Via degli Ottoboni 37; la sua durata è illimitata salvo scioglimento deliberato dall’assemblea. Tra i suoi scopi figurano la promozione della cultura musicale, filosofica e scientifica, l’organizzazione di concerti, festival e rassegne, di masterclass e corsi di perfezionamento musicale, di attività didattiche e divulgative, nonché il sostegno a giovani musicisti e ricercatori.',
-      'Lo statuto prevede inoltre collaborazioni con scuole, conservatori, università, accademie ed enti di ricerca, insieme alla possibilità di pubblicare materiali e sostenere borse di studio.',
-      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Elia Tarizzo, Alberto Chines ed Edoardo Toffoletto. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore scientifico, definendo da subito un impianto operativo orientato alla direzione culturale, alla progettazione artistica e alla ricerca.',
+      'Lo statuto prevede inoltre collaborazioni con scuole, conservatori, università, accademie ed enti di ricerca, insieme alla possibilità di pubblicare materiali e sostenere borse di studio. In questo quadro, Resonarium si configura come una struttura dedicata alla progettazione culturale, alla formazione e alla ricerca.',
+      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Elia Tarizzo, Alberto Chines ed Edoardo Toffoletto. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore scientifico.',
     ],
 
     foundersTitle: 'Fondatori',
@@ -59,14 +59,14 @@ const CONTENT = {
       {
         role: 'Presidente',
         name: 'Elia Tarizzo',
-        bio: 'Nato a Parigi nel 28/11/2001. Ha studiato composizione, violino e pianoforte. Si laurea in Filosofia nel 2024 presso l’università Statale di Milano. Attualmente studia Medicina e chirurgia nell’università Vita-Salute San Raffaele.',
+        bio: 'Socio fondatore e Presidente del primo Consiglio Direttivo. Coordina l’indirizzo istituzionale dell’associazione e ne segue la rappresentanza legale e la visione generale.',
         image: '/founder-elia.jpg',
       },
       {
         role: 'Direttore artistico',
         name: 'Alberto Chines',
-        bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. Pianista e Steinway Artist dal 2020, si è formato alla Accademia di Imola con Franco Scala e Piero Rattalino e al Conservatorio di Bolzano. Dopo il debutto a quindici anni al Teatro Massimo di Palermo, ha vinto il primo premio al Concorso "Palma d’Oro" e il Sony Classical Talent Scout. La sua attività concertistica lo ha portato in sedi di prestigio internazionale, dalla Van Cliburn Recital Hall (USA) al Teatro alla Scala di Milano. Musicista eclettico, esplora il repertorio solistico e cameristico con una spiccata apertura verso la nuova musica e le trascrizioni autoriali, collaborando con artisti quali Anna Serova e il Quartetto Noûs. Già ideatore del Musica Manent Festival di Ustica, affianca la progettazione culturale al suo impegno accademico: è attualmente docente di pianoforte presso il Conservatorio di Rovigo.',
-        image: '/founder-alberto.jpg',
+        bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. Pianista e Steinway Artist dal 2020, si è formato alla Accademia di Imola con Franco Scala e Piero Rattalino e al Conservatorio di Bolzano. Dopo il debutto a quindici anni al Teatro Massimo di Palermo, ha vinto il primo premio al Concorso "Palma d’Oro" e il Sony Classical Talent Scout. La sua attività concertistica lo ha portato in sedi di prestigio internazionale, dalla Van Cliburn Recital Hall (USA) al Teatro alla Scala di Milano. Musicista eclettico, esplora il repertorio solistico e cameristico con una spiccata apertura verso la nuova musica e le trascrizioni autoriali, collaborando con artisti quali Anna Serova e il Quartetto Noûs. Già ideatore del Musica Manent Festival di Ustica, affianca alla progettazione culturale il suo impegno accademico: è attualmente docente di pianoforte presso il Conservatorio di Rovigo.',
+        image: '/founder-alberto.jpeg',
       },
       {
         role: 'Direttore scientifico',
@@ -77,35 +77,34 @@ const CONTENT = {
     ] as Founder[],
 
     visionKicker: 'Vision',
-    visionTitle: "L’ascolto come pratica di conoscenza e rigore metodologico",
+    visionTitle: 'Orientamento culturale',
     visionParagraphs: [
-      'Al centro della visione di Resonarium vi è l’idea che l’ascolto non sia una facoltà passiva, ma una pratica di conoscenza. Ascoltare significa riconoscere forme, cogliere relazioni, comprendere stratificazioni e sviluppare una sensibilità critica nei confronti dello spazio, del tempo e delle condizioni materiali dell’esperienza.',
-      'Per questa ragione, l’associazione attribuisce un valore decisivo allo studio, alla precisione concettuale e al rigore metodologico. Ogni iniziativa viene pensata come un dispositivo capace di coniugare qualità artistica, chiarezza formativa e profondità teorica.',
-      'La prospettiva di Resonarium è interdisciplinare non per semplice giustapposizione di linguaggi, ma per necessità di metodo: il fenomeno sonoro richiede strumenti di analisi e di invenzione che attraversino i confini tra musica, filosofia, acustica, ecologia, formazione e ricerca.',
+      'L’orientamento di Resonarium si fonda sull’idea che l’ascolto costituisca una pratica di attenzione, di studio e di conoscenza. In questa prospettiva, il suono non viene inteso esclusivamente come materia artistica, ma anche come campo di indagine capace di mettere in relazione estetica, storia delle idee, spazio sociale e forme della percezione.',
+      'Per questa ragione l’associazione attribuisce particolare importanza al rigore metodologico, alla qualità dei contenuti e alla costruzione di contesti formativi e culturali chiaramente definiti. Ogni iniziativa è pensata per tenere insieme precisione concettuale, cura organizzativa e apertura al confronto interdisciplinare.',
+      'L’obiettivo non è l’autorepresentazione, ma la costituzione di un ambiente serio e riconoscibile per lo studio, la ricerca e la diffusione culturale.',
     ],
 
     activitiesKicker: 'Attività',
-    activitiesTitle:
-      'Formazione accademica, concerti, masterclass e ricerca culturale',
+    activitiesTitle: 'Programmi e iniziative',
     activitiesIntro:
-      'Per il raggiungimento dei propri scopi l’associazione può organizzare concerti e spettacoli, masterclass musicali, artistiche e culturali, seminari, conferenze e convegni, nonché promuovere materiali didattici e divulgativi, collaborazioni con enti pubblici e privati, partecipazione a bandi culturali e sostegno tramite borse di studio.',
+      'Per il perseguimento dei propri scopi, l’associazione può organizzare concerti e spettacoli, masterclass musicali, artistiche e culturali, seminari, conferenze e convegni, nonché promuovere materiali didattici e divulgativi, collaborazioni con enti pubblici e privati, partecipazione a bandi culturali e sostegno tramite borse di studio.',
     activitiesItems: [
       {
         title: 'Concerti, festival e rassegne',
-        text: 'Tra gli scopi dell’associazione rientrano l’organizzazione di concerti, festival e rassegne e, più in generale, la promozione di eventi culturali e artistici. Resonarium intende quindi costruire programmi pubblici capaci di unire qualità musicale, consapevolezza curatoriale e apertura interdisciplinare.',
+        text: 'Tra gli ambiti di attività rientrano l’organizzazione di concerti, festival, rassegne e altri programmi pubblici dedicati alla musica e alla cultura contemporanea. Tali iniziative sono concepite come occasioni di ascolto e approfondimento, con particolare attenzione alla qualità curatoriale e alla coerenza del progetto culturale.',
       },
       {
-        title: 'Masterclass, corsi e attività didattiche',
-        text: 'Lo statuto prevede masterclass, corsi di perfezionamento musicale e attività didattiche e divulgative, rivolte in particolare a giovani musicisti e ricercatori. La dimensione formativa non è intesa come semplice trasmissione tecnica, ma come costruzione di contesti di studio esigenti e culturalmente articolati.',
+        title: 'Formazione, masterclass e corsi',
+        text: 'L’associazione promuove masterclass, corsi di perfezionamento musicale e attività didattiche e divulgative rivolte a studenti, giovani musicisti, ricercatori e pubblico interessato. La formazione è intesa come costruzione di percorsi di studio fondati su competenza, continuità e chiarezza d’impostazione.',
       },
       {
         title: 'Ricerca, pubblicazioni e collaborazioni',
-        text: 'L’associazione può collaborare con scuole, conservatori, università, accademie, enti di ricerca e soggetti pubblici o privati, pubblicare materiali didattici o divulgativi e sviluppare progetti di ricerca scientifica e filosofica. Questa cornice rende Resonarium una struttura pensata non soltanto per produrre eventi, ma anche per sostenere ricerca, scrittura e lavoro culturale continuativo.',
+        text: 'Resonarium può collaborare con scuole, conservatori, università, accademie, enti di ricerca e soggetti pubblici o privati, oltre a pubblicare materiali didattici o divulgativi e a sviluppare progetti di ricerca. In questo senso, l’associazione opera come una piattaforma di lavoro culturale stabile, orientata alla produzione di contenuti, relazioni e percorsi di studio.',
       },
     ],
 
     contactsKicker: 'Contatti',
-    contactsTitle: 'Contatti e sede',
+    contactsTitle: 'Sede e riferimenti',
     contactsParagraphs: [
       'La sede di Resonarium si trova a Milano, in Via degli Ottoboni 37. Il Consiglio direttivo può istituire sedi operative o sezioni in altre città, ma la sede legale resta nel Comune di Milano.',
       'Per collaborazioni, progetti, attività formative o richieste istituzionali, l’associazione può essere contattata tramite i riferimenti indicati di seguito oppure mediante il modulo presente in questa pagina.',
@@ -142,18 +141,18 @@ const CONTENT = {
     close: 'Close',
 
     homeKicker: 'Milan · Cultural association',
-    homeTitle: 'RESONARIUM',
+    homeTitle: 'Resonarium',
     homeParagraphs: [
-      'RESONARIUM presents itself as a cultural platform devoted to the investigation of sound in its aesthetic, social, and epistemic dimensions. Its activities unfold across music, education, research, and interdisciplinary design, with the aim of building an intellectual and artistic environment capable of combining methodological rigor, curatorial quality, and public openness.',
-      'From this perspective, the association promotes listening practices, educational pathways, and occasions for exchange in which sound is understood not merely as an artistic phenomenon, but as a field of experience, relation, and critical engagement with the present.',
+      'Resonarium is a cultural association based in Milan, active in the fields of music, education, and interdisciplinary research. Its work is oriented toward the creation of contexts for study, listening, and cultural production, with particular attention to the relationship between artistic practice, theoretical reflection, and the transmission of knowledge.',
+      'The association promotes initiatives addressed to musicians, scholars, students, and interested audiences, fostering occasions for study and collaboration in which sound may be approached as an artistic, cultural, and scientific object.',
     ],
 
     aboutKicker: 'About',
-    aboutTitle: 'A community of artistic and scientific research',
+    aboutTitle: 'Institutional profile and fields of activity',
     aboutParagraphs: [
       'The Cultural Association Resonarium is established as a non-profit association based in Milan, Via degli Ottoboni 37; its duration is unlimited unless dissolved by the members’ assembly. Its aims include the promotion of musical, philosophical, and scientific culture, the organisation of concerts, festivals, and series, masterclasses and advanced musical training, educational and public outreach activities, and support for young musicians and researchers.',
-      'The statute also provides for collaborations with schools, conservatories, universities, academies, and research bodies, together with the possibility of producing publications and supporting scholarships.',
-      'The association is formally founded through the deed of incorporation signed by the three founding members Elia Tarizzo, Alberto Chines, and Edoardo Toffoletto. The first Board appoints them respectively as President, Artistic Director, and Scientific Director, establishing from the outset an operational structure devoted to cultural direction, artistic planning, and research.',
+      'The statute also provides for collaborations with schools, conservatories, universities, academies, and research bodies, together with the possibility of producing publications and supporting scholarships. In this framework, Resonarium takes shape as a structure devoted to cultural design, education, and research.',
+      'The association is formally founded through the deed of incorporation signed by the three founding members Elia Tarizzo, Alberto Chines, and Edoardo Toffoletto. The first Board appoints them respectively as President, Artistic Director, and Scientific Director.',
     ],
 
     foundersTitle: 'Founders',
@@ -167,8 +166,8 @@ const CONTENT = {
       {
         role: 'Artistic Director',
         name: 'Alberto Chines',
-        bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium.',
-        image: '/founder-alberto.jpg',
+        bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium. A pianist and Steinway Artist since 2020, he trained at the Accademia di Imola with Franco Scala and Piero Rattalino and at the Conservatory of Bolzano. After making his debut at the age of fifteen at the Teatro Massimo in Palermo, he won first prize at the Palma d’Oro Competition and the Sony Classical Talent Scout. His concert career has taken him to internationally renowned venues, from the Van Cliburn Recital Hall in the United States to Teatro alla Scala in Milan. An eclectic musician, he explores solo and chamber repertoire with a marked openness toward new music and authorial transcriptions, collaborating with artists such as Anna Serova and Quartetto Noûs. Former creator of the Musica Manent Festival in Ustica, he combines cultural planning with academic work: he is currently professor of piano at the Conservatory of Rovigo.',
+        image: '/founder-alberto.jpeg',
       },
       {
         role: 'Scientific Director',
@@ -179,35 +178,34 @@ const CONTENT = {
     ] as Founder[],
 
     visionKicker: 'Vision',
-    visionTitle: 'Listening as a practice of knowledge and methodological rigor',
+    visionTitle: 'Cultural orientation',
     visionParagraphs: [
-      'At the centre of Resonarium’s vision lies the idea that listening is not a passive faculty, but a practice of knowledge. To listen means to recognise forms, perceive relations, understand stratifications, and develop a critical sensitivity toward space, time, and the material conditions of experience.',
-      'For this reason, the association places decisive value on study, conceptual precision, and methodological rigor. Each initiative is conceived as a device capable of combining artistic quality, educational clarity, and theoretical depth.',
-      'Resonarium’s perspective is interdisciplinary not through the simple accumulation of languages, but by methodological necessity: the sonic phenomenon requires tools of analysis and invention that move across the boundaries of music, philosophy, acoustics, ecology, education, and research.',
+      'Resonarium’s orientation is grounded in the idea that listening constitutes a practice of attention, study, and knowledge. From this perspective, sound is understood not exclusively as artistic material, but also as a field of inquiry capable of connecting aesthetics, intellectual history, social space, and forms of perception.',
+      'For this reason, the association places particular importance on methodological rigor, quality of content, and the construction of clearly defined educational and cultural contexts. Each initiative is conceived so as to bring together conceptual precision, organisational care, and openness to interdisciplinary exchange.',
+      'The aim is not self-celebration, but the establishment of a serious and recognisable environment for study, research, and cultural dissemination.',
     ],
 
     activitiesKicker: 'Activities',
-    activitiesTitle:
-      'Academic formation, concerts, masterclasses, and cultural research',
+    activitiesTitle: 'Programmes and initiatives',
     activitiesIntro:
       'To pursue its aims, the association may organise concerts and performances, musical, artistic, and cultural masterclasses, seminars, conferences, and symposia, as well as educational materials, collaborations with public and private bodies, participation in cultural calls, and support through scholarships.',
     activitiesItems: [
       {
         title: 'Concerts, festivals, and series',
-        text: 'Among the association’s aims are the organisation of concerts, festivals, and series, and more broadly the promotion of cultural and artistic events. Resonarium therefore seeks to build public programmes capable of combining musical quality, curatorial awareness, and interdisciplinary openness.',
+        text: 'Among its fields of activity are the organisation of concerts, festivals, series, and other public programmes devoted to music and contemporary culture. These initiatives are conceived as occasions for listening and study, with particular attention to curatorial quality and the coherence of the cultural project.',
       },
       {
-        title: 'Masterclasses, courses, and educational activities',
-        text: 'The statute provides for masterclasses, advanced musical training courses, and educational and outreach activities, especially for young musicians and researchers. The educational dimension is not intended as mere technical transmission, but as the construction of demanding and culturally articulated contexts of study.',
+        title: 'Education, masterclasses, and courses',
+        text: 'The association promotes masterclasses, advanced musical training courses, and educational activities addressed to students, young musicians, researchers, and interested audiences. Education is understood as the construction of paths of study based on competence, continuity, and clarity of approach.',
       },
       {
         title: 'Research, publications, and collaborations',
-        text: 'The association may collaborate with schools, conservatories, universities, academies, research institutions, and both public and private bodies; publish educational materials; and develop scientific and philosophical research projects. This framework makes Resonarium a structure conceived not only to produce events, but also to support research, writing, and sustained cultural work.',
+        text: 'Resonarium may collaborate with schools, conservatories, universities, academies, research institutions, and both public and private bodies, as well as publish educational materials and develop research projects. In this sense, the association operates as a stable platform for cultural work, oriented toward the production of content, relations, and study paths.',
       },
     ],
 
     contactsKicker: 'Contacts',
-    contactsTitle: 'Contacts and headquarters',
+    contactsTitle: 'Headquarters and contact details',
     contactsParagraphs: [
       'Resonarium is based in Milan, Via degli Ottoboni 37. The Board of Directors may establish operational branches or sections in other cities, but the legal headquarters remain in the municipality of Milan.',
       'For collaborations, projects, educational initiatives, or institutional enquiries, the association may be contacted through the references below or by means of the form on this page.',
@@ -642,7 +640,6 @@ export default function Page() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const text = CONTENT[language];
-  const year = useMemo(() => 2026, []);
 
   useEffect(() => {
     if (!nextSection) return;
@@ -709,8 +706,8 @@ export default function Page() {
           >
             <div className="splash-shell">
               <SplashLogo />
-              <h1 className="mt-10 text-[clamp(2.4rem,5vw,5rem)] italic leading-none tracking-[-0.03em] text-[var(--foreground)]">
-                RESONARIUM
+              <h1 className="mt-10 text-[clamp(2rem,4vw,3.6rem)] tracking-[0.08em] [font-variant-caps:all-small-caps] text-[var(--foreground)]">
+                Resonarium
               </h1>
               <p className="mt-5 text-[0.8rem] uppercase tracking-[0.32em] text-[var(--foreground-faint)]">
                 {text.splashSubtitle}
@@ -838,7 +835,7 @@ export default function Page() {
                 <div className="mt-12 flex flex-1 flex-col justify-center gap-7">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="text-left text-[1.45rem] italic leading-none text-[var(--foreground)]"
+                    className="text-left text-[1.35rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
                   >
                     {text.navHome}
                   </button>
@@ -847,7 +844,7 @@ export default function Page() {
                     <button
                       key={item.key}
                       onClick={() => navigateTo(item.key)}
-                      className="text-left text-[1.45rem] italic leading-none text-[var(--foreground)]"
+                      className="text-left text-[1.35rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
                     >
                       {item.label[language]}
                     </button>
