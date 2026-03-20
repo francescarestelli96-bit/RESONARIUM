@@ -67,8 +67,8 @@ const CONTENT = {
         role: 'Direttore artistico',
         name: 'Alberto Chines',
         bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. Pianista e Steinway Artist dal 2020, si è formato alla Accademia di Imola con Franco Scala e Piero Rattalino e al Conservatorio di Bolzano. Dopo il debutto a quindici anni al Teatro Massimo di Palermo, ha vinto il primo premio al Concorso "Palma d’Oro" e il Sony Classical Talent Scout. La sua attività concertistica lo ha portato in sedi di prestigio internazionale, dalla Van Cliburn Recital Hall (USA) al Teatro alla Scala di Milano. Musicista eclettico, esplora il repertorio solistico e cameristico con una spiccata apertura verso la nuova musica e le trascrizioni autoriali, collaborando con artisti quali Anna Serova e il Quartetto Noûs. Già ideatore del Musica Manent Festival di Ustica, affianca alla progettazione culturale il suo impegno accademico: è attualmente docente di pianoforte presso il Conservatorio di Rovigo.',
-        image: '/founder-alberto.jpg',
-        imagePosition: '82% center',
+        image: '/founder-alberto.jpeg',
+        imagePosition: '68% center',
       },
       {
         role: 'Direttore scientifico',
@@ -170,7 +170,7 @@ const CONTENT = {
         name: 'Alberto Chines',
         bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium. A pianist and Steinway Artist since 2020, he trained at the Accademia di Imola with Franco Scala and Piero Rattalino and at the Conservatory of Bolzano. After making his debut at the age of fifteen at the Teatro Massimo in Palermo, he won first prize at the Palma d’Oro Competition and the Sony Classical Talent Scout. His concert career has taken him to internationally renowned venues, from the Van Cliburn Recital Hall in the United States to Teatro alla Scala in Milan. An eclectic musician, he explores solo and chamber repertoire with a marked openness toward new music and authorial transcriptions, collaborating with artists such as Anna Serova and Quartetto Noûs. Former creator of the Musica Manent Festival in Ustica, he combines cultural planning with academic work: he is currently professor of piano at the Conservatory of Rovigo.',
         image: '/founder-alberto.jpeg',
-        imagePosition: '82% center',
+        imagePosition: '68% center',
       },
       {
         role: 'Scientific Director',
@@ -277,13 +277,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-16 w-44">
+    <div className="mobile-logo-box relative">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.55]"
+        className="object-contain scale-[1.65] md:scale-[1.55]"
       />
     </div>
   );
@@ -291,13 +291,13 @@ function NavbarLogoMobile() {
 
 function SplashLogo() {
   return (
-    <div className="relative h-44 w-80 sm:h-52 sm:w-[28rem] lg:h-64 lg:w-[40rem]">
+    <div className="mobile-splash-logo relative h-44 w-80 sm:h-52 sm:w-[28rem] lg:h-64 lg:w-[40rem]">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.28]"
+        className="object-contain scale-[1.18] sm:scale-[1.24] lg:scale-[1.28]"
       />
     </div>
   );
@@ -472,16 +472,16 @@ function HomeSection({
   return (
     <section className="page-shell">
       <div className="page-content">
-        <p className="kicker">{text.homeKicker}</p>
-        <h1 className="page-title mt-8">{text.homeTitle}</h1>
+        <p className="kicker mobile-kicker-offset">{text.homeKicker}</p>
+        <h1 className="page-title mt-6 md:mt-8">{text.homeTitle}</h1>
 
-        <div className="body-copy mt-10 max-w-4xl">
+        <div className="body-copy mt-8 max-w-4xl md:mt-10">
           {text.homeParagraphs.map((paragraph: string) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-8 flex flex-wrap gap-3 md:mt-10 md:gap-4">
           <button
             onClick={() => onNavigate('chi-siamo')}
             className="primary-button"
@@ -508,15 +508,15 @@ function AboutSection({ language }: { language: Language }) {
     <section className="page-shell">
       <div className="page-content">
         <p className="kicker">{text.aboutKicker}</p>
-        <h2 className="section-title mt-8">{text.aboutTitle}</h2>
+        <h2 className="section-title mt-6 md:mt-8">{text.aboutTitle}</h2>
 
-        <div className="body-copy mt-10 max-w-5xl">
+        <div className="body-copy mt-8 max-w-5xl md:mt-10">
           {text.aboutParagraphs.map((paragraph: string) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <div className="mt-14">
+        <div className="mt-12 md:mt-14">
           <p className="kicker">{text.foundersTitle}</p>
           <div className="mt-8 space-y-10">
             {text.founders.map((founder) => (
@@ -540,9 +540,9 @@ function VisionSection({ language }: { language: Language }) {
     <section className="page-shell">
       <div className="page-content">
         <p className="kicker">{text.visionKicker}</p>
-        <h2 className="section-title mt-8">{text.visionTitle}</h2>
+        <h2 className="section-title mt-6 md:mt-8">{text.visionTitle}</h2>
 
-        <div className="body-copy mt-10 max-w-5xl">
+        <div className="body-copy mt-8 max-w-5xl md:mt-10">
           {text.visionParagraphs.map((paragraph: string) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -559,13 +559,13 @@ function ActivitiesSection({ language }: { language: Language }) {
     <section className="page-shell">
       <div className="page-content">
         <p className="kicker">{text.activitiesKicker}</p>
-        <h2 className="section-title mt-8">{text.activitiesTitle}</h2>
+        <h2 className="section-title mt-6 md:mt-8">{text.activitiesTitle}</h2>
 
-        <div className="body-copy mt-10 max-w-5xl">
+        <div className="body-copy mt-8 max-w-5xl md:mt-10">
           <p>{text.activitiesIntro}</p>
         </div>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-10 space-y-10 md:mt-12">
           {text.activitiesItems.map((item, index) => (
             <section key={item.title} className="border-t border-[var(--line)] pt-8">
               <p className="kicker">{String(index + 1).padStart(2, '0')}</p>
@@ -588,15 +588,15 @@ function ContactsSection({ language }: { language: Language }) {
     <section className="page-shell">
       <div className="page-content">
         <p className="kicker">{text.contactsKicker}</p>
-        <h2 className="section-title mt-8">{text.contactsTitle}</h2>
+        <h2 className="section-title mt-6 md:mt-8">{text.contactsTitle}</h2>
 
-        <div className="body-copy mt-10 max-w-5xl">
+        <div className="body-copy mt-8 max-w-5xl md:mt-10">
           {text.contactsParagraphs.map((paragraph: string) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2">
+        <div className="mt-10 grid gap-10 md:mt-12 md:grid-cols-2">
           <div>
             <p className="kicker">{text.addressLabel}</p>
             <div className="mt-5 space-y-2 text-lg leading-9 text-[var(--foreground-soft)]">
@@ -709,15 +709,15 @@ export default function Page() {
             className="splash-button"
             aria-label={language === 'it' ? 'Entra nel sito' : 'Enter the site'}
           >
-            <div className="splash-shell">
+            <div className="splash-shell mobile-splash-shell">
               <SplashLogo />
-              <h1 className="mt-10 text-[clamp(2rem,4vw,3.6rem)] tracking-[0.08em] [font-variant-caps:all-small-caps] text-[var(--foreground)]">
+              <h1 className="mobile-splash-title mt-10 text-[clamp(2rem,4vw,3.6rem)] tracking-[0.08em] [font-variant-caps:all-small-caps] text-[var(--foreground)]">
                 Resonarium
               </h1>
-              <p className="mt-5 text-[0.8rem] uppercase tracking-[0.32em] text-[var(--foreground-faint)]">
+              <p className="mobile-splash-subtitle mt-5 text-[0.8rem] uppercase tracking-[0.32em] text-[var(--foreground-faint)]">
                 {text.splashSubtitle}
               </p>
-              <div className="secondary-button mt-10">{text.enter}</div>
+              <div className="mobile-splash-cta secondary-button mt-10">{text.enter}</div>
             </div>
           </button>
         </div>
@@ -727,21 +727,13 @@ export default function Page() {
         <>
           <header className="topbar">
             <div className="container-shell">
-              <div className="flex min-h-[104px] items-center justify-between gap-4 sm:min-h-[112px]">
+              <div className="hidden min-h-[104px] items-center justify-between gap-4 sm:min-h-[112px] md:flex">
                 <button
                   onClick={() => navigateTo('home')}
                   className="hidden shrink-0 items-center md:flex"
                   aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                 >
                   <NavbarLogoDesktop />
-                </button>
-
-                <button
-                  onClick={() => navigateTo('home')}
-                  className="flex shrink-0 items-center md:hidden"
-                  aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
-                >
-                  <NavbarLogoMobile />
                 </button>
 
                 <div className="hidden min-w-0 flex-1 px-3 xl:block">
@@ -785,12 +777,22 @@ export default function Page() {
                     ENG
                   </button>
                 </div>
+              </div>
 
-                <div className="flex shrink-0 items-center gap-2 md:hidden">
+              <div className="mobile-header-row flex items-center justify-between md:hidden">
+                <button
+                  onClick={() => navigateTo('home')}
+                  className="flex items-center"
+                  aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
+                >
+                  <NavbarLogoMobile />
+                </button>
+
+                <div className="mobile-actions">
                   <button
                     onClick={() => setLanguage('it')}
                     className={cn(
-                      'secondary-button px-3',
+                      'secondary-button',
                       language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -799,7 +801,7 @@ export default function Page() {
                   <button
                     onClick={() => setLanguage('en')}
                     className={cn(
-                      'secondary-button px-3',
+                      'secondary-button',
                       language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -807,7 +809,7 @@ export default function Page() {
                   </button>
                   <button
                     onClick={() => setMobileMenuOpen(true)}
-                    className="secondary-button px-3"
+                    className="secondary-button menu-button"
                     aria-label={text.menu}
                   >
                     {text.menu}
@@ -819,7 +821,7 @@ export default function Page() {
 
           {mobileMenuOpen && (
             <div className="mobile-menu-overlay menu-fade-in md:hidden">
-              <div className="container-shell flex min-h-screen flex-col py-8">
+              <div className="container-shell mobile-menu-panel flex min-h-screen flex-col py-8">
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => navigateTo('home')}
@@ -831,7 +833,7 @@ export default function Page() {
 
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="secondary-button px-3"
+                    className="secondary-button"
                   >
                     {text.close}
                   </button>
@@ -840,7 +842,7 @@ export default function Page() {
                 <div className="mt-12 flex flex-1 flex-col justify-center gap-7">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="text-left text-[1.35rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
+                    className="text-left text-[1.25rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
                   >
                     {text.navHome}
                   </button>
@@ -849,7 +851,7 @@ export default function Page() {
                     <button
                       key={item.key}
                       onClick={() => navigateTo(item.key)}
-                      className="text-left text-[1.35rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
+                      className="text-left text-[1.25rem] [font-variant-caps:all-small-caps] tracking-[0.04em] text-[var(--foreground)]"
                     >
                       {item.label[language]}
                     </button>
