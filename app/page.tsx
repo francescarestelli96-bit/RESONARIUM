@@ -167,7 +167,7 @@ const CONTENT = {
         role: 'Artistic Director',
         name: 'Alberto Chines',
         bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium. A pianist and Steinway Artist since 2020, he trained at the Accademia di Imola with Franco Scala and Piero Rattalino and at the Conservatory of Bolzano. After making his debut at the age of fifteen at the Teatro Massimo in Palermo, he won first prize at the Palma d’Oro Competition and the Sony Classical Talent Scout. His concert career has taken him to internationally renowned venues, from the Van Cliburn Recital Hall in the United States to Teatro alla Scala in Milan. An eclectic musician, he explores solo and chamber repertoire with a marked openness toward new music and authorial transcriptions, collaborating with artists such as Anna Serova and Quartetto Noûs. Former creator of the Musica Manent Festival in Ustica, he combines cultural planning with academic work: he is currently professor of piano at the Conservatory of Rovigo.',
-        image: '/founder-alberto.jpeg',
+        image: '/founder-alberto.jpg',
       },
       {
         role: 'Scientific Director',
