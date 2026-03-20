@@ -33,7 +33,7 @@ const NAV_ITEMS: {
 
 const CONTENT = {
   it: {
-    splashSubtitle: 'RESONARIUM - Associazione Culturale Milano',
+    splashSubtitle: 'Associazione Culturale Milano',
     enter: 'Entra',
     navHome: 'Home',
     menu: 'Menu',
@@ -66,7 +66,7 @@ const CONTENT = {
         role: 'Direttore artistico',
         name: 'Alberto Chines',
         bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. Pianista e Steinway Artist dal 2020, si è formato alla Accademia di Imola con Franco Scala e Piero Rattalino e al Conservatorio di Bolzano. Dopo il debutto a quindici anni al Teatro Massimo di Palermo, ha vinto il primo premio al Concorso "Palma d’Oro" e il Sony Classical Talent Scout. La sua attività concertistica lo ha portato in sedi di prestigio internazionale, dalla Van Cliburn Recital Hall (USA) al Teatro alla Scala di Milano. Musicista eclettico, esplora il repertorio solistico e cameristico con una spiccata apertura verso la nuova musica e le trascrizioni autoriali, collaborando con artisti quali Anna Serova e il Quartetto Noûs. Già ideatore del Musica Manent Festival di Ustica, affianca alla progettazione culturale il suo impegno accademico: è attualmente docente di pianoforte presso il Conservatorio di Rovigo.',
-        image: '/founder-alberto.jpeg',
+        image: '/founder-alberto.jpg',
       },
       {
         role: 'Direttore scientifico',
