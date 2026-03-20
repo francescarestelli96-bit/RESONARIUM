@@ -17,6 +17,7 @@ type Founder = {
   name: string;
   bio: string;
   image: string;
+  imagePosition?: string;
 };
 
 const LOGO_SRC = '/Resonarium_logo_blacknobg.png';
@@ -33,7 +34,7 @@ const NAV_ITEMS: {
 
 const CONTENT = {
   it: {
-    splashSubtitle: 'Associazione Culturale Milano',
+    splashSubtitle: 'RESONARIUM - Associazione Culturale Milano',
     enter: 'Entra',
     navHome: 'Home',
     menu: 'Menu',
@@ -66,7 +67,8 @@ const CONTENT = {
         role: 'Direttore artistico',
         name: 'Alberto Chines',
         bio: 'Socio fondatore e Direttore artistico del primo Consiglio Direttivo. Contribuisce alla definizione dell’orientamento culturale e della programmazione artistica di Resonarium. Pianista e Steinway Artist dal 2020, si è formato alla Accademia di Imola con Franco Scala e Piero Rattalino e al Conservatorio di Bolzano. Dopo il debutto a quindici anni al Teatro Massimo di Palermo, ha vinto il primo premio al Concorso "Palma d’Oro" e il Sony Classical Talent Scout. La sua attività concertistica lo ha portato in sedi di prestigio internazionale, dalla Van Cliburn Recital Hall (USA) al Teatro alla Scala di Milano. Musicista eclettico, esplora il repertorio solistico e cameristico con una spiccata apertura verso la nuova musica e le trascrizioni autoriali, collaborando con artisti quali Anna Serova e il Quartetto Noûs. Già ideatore del Musica Manent Festival di Ustica, affianca alla progettazione culturale il suo impegno accademico: è attualmente docente di pianoforte presso il Conservatorio di Rovigo.',
-        image: '/founder-alberto.jpg',
+        image: '/founder-alberto.jpeg',
+        imagePosition: '82% center',
       },
       {
         role: 'Direttore scientifico',
@@ -167,7 +169,8 @@ const CONTENT = {
         role: 'Artistic Director',
         name: 'Alberto Chines',
         bio: 'Founding member and Artistic Director of the first Board of Directors. He contributes to the cultural orientation and artistic programming of Resonarium. A pianist and Steinway Artist since 2020, he trained at the Accademia di Imola with Franco Scala and Piero Rattalino and at the Conservatory of Bolzano. After making his debut at the age of fifteen at the Teatro Massimo in Palermo, he won first prize at the Palma d’Oro Competition and the Sony Classical Talent Scout. His concert career has taken him to internationally renowned venues, from the Van Cliburn Recital Hall in the United States to Teatro alla Scala in Milan. An eclectic musician, he explores solo and chamber repertoire with a marked openness toward new music and authorial transcriptions, collaborating with artists such as Anna Serova and Quartetto Noûs. Former creator of the Musica Manent Festival in Ustica, he combines cultural planning with academic work: he is currently professor of piano at the Conservatory of Rovigo.',
-        image: '/founder-alberto.jpg',
+        image: '/founder-alberto.jpeg',
+        imagePosition: '82% center',
       },
       {
         role: 'Scientific Director',
@@ -305,6 +308,7 @@ function FounderCard({
   name,
   bio,
   image,
+  imagePosition,
   imageMissingLabel,
 }: Founder & { imageMissingLabel: string }) {
   const [imageError, setImageError] = useState(false);
@@ -319,6 +323,7 @@ function FounderCard({
             width={720}
             height={960}
             className="h-full w-full object-cover"
+            style={{ objectPosition: imagePosition ?? 'center center' }}
             onError={() => setImageError(true)}
           />
         ) : (
