@@ -304,13 +304,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-32 w-80 translate-y-4 sm:h-24 sm:w-64 sm:translate-y-0">
+    <div className="relative h-24 w-60 sm:h-24 sm:w-64">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[2.05] sm:scale-[1.85]"
+        className="object-contain scale-[1.82] sm:scale-[1.85]"
       />
     </div>
   );
@@ -849,20 +849,21 @@ export default function Page() {
                 <LanguageSwitch language={language} onChange={setLanguage} />
               </div>
 
-              <div className="flex min-h-[152px] flex-col justify-center gap-5 py-4 md:hidden">
+              <div className="mobile-header-row md:hidden">
                 <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 shrink items-center pt-4"
+                    className="flex min-w-0 shrink items-center"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />
                   </button>
 
-                  <MenuTrigger label={text.menu} onClick={() => setMobileMenuOpen(true)} />
+                  <div className="mobile-header-controls">
+                    <MenuTrigger label={text.menu} onClick={() => setMobileMenuOpen(true)} />
+                    <LanguageSwitch language={language} onChange={setLanguage} />
+                  </div>
                 </div>
-
-                <LanguageSwitch language={language} onChange={setLanguage} />
               </div>
             </div>
           </header>
@@ -873,7 +874,7 @@ export default function Page() {
                 <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 items-center pt-4"
+                    className="flex min-w-0 items-center"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />

@@ -375,6 +375,18 @@ svg {
   overflow-x: hidden;
 }
 
+.mobile-header-row {
+  display: none;
+}
+
+.mobile-header-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.2rem;
+}
+
 .language-switch {
   display: flex;
   align-items: center;
@@ -619,12 +631,12 @@ svg {
   .page-shell {
     min-height: auto;
     display: block;
-    padding: 3.6rem 0 6.4rem;
+    padding: 2.35rem 0 6rem;
   }
 
   .page-content {
     max-width: 30rem;
-    padding-inline: 0.75rem;
+    padding-inline: 0.45rem;
   }
 
   .page-title {
@@ -686,6 +698,12 @@ svg {
     width: min(100% - 6.25rem, 1240px);
   }
 
+  .mobile-header-row {
+    display: block;
+    min-height: 118px;
+    padding: 1.4rem 0 1.2rem;
+  }
+
   .mobile-menu-link {
     font-size: clamp(1.3rem, 5.6vw, 1.65rem);
     padding-bottom: 0.75rem;
@@ -696,23 +714,35 @@ svg {
   }
 
   .language-switch {
-    padding: 0.36rem;
+    padding: 0.28rem;
   }
 
   .language-switch-button {
-    min-width: 68px;
-    min-height: 40px;
-    padding: 0 1rem;
-    font-size: 0.66rem;
-    letter-spacing: 0.22em;
+    min-width: 58px;
+    min-height: 34px;
+    padding: 0 0.82rem;
+    font-size: 0.61rem;
+    letter-spacing: 0.2em;
   }
 
   .menu-trigger {
-    gap: 0.72rem;
-    min-height: 48px;
-    padding: 0 1.05rem;
-    font-size: 0.66rem;
-    letter-spacing: 0.22em;
+    gap: 0.62rem;
+    min-height: 42px;
+    padding: 0 0.9rem;
+    font-size: 0.61rem;
+    letter-spacing: 0.18em;
+  }
+
+  .menu-trigger-lines span {
+    width: 13px;
+  }
+
+  .menu-trigger-lines span:nth-child(2) {
+    width: 9px;
+  }
+
+  .menu-trigger-lines span:nth-child(3) {
+    width: 11px;
   }
 
   .founder-image-shell {
