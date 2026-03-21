@@ -34,14 +34,13 @@ const NAV_ITEMS: {
 
 const CONTENT = {
   it: {
-    splashSubtitle: 'Associazione Culturale Milano',
     enter: 'Entra',
     navHome: 'Home',
     menu: 'Menu',
     close: 'Chiudi',
 
     homeKicker: 'Milano · Associazione culturale',
-    homeTitle: '',
+    homeTitle: 'Resonarium',
     homeParagraphs: [
       'Resonarium è un’associazione culturale con sede a Milano, attiva nell’ambito della musica, della formazione e della ricerca interdisciplinare. La sua attività è orientata alla costruzione di contesti di studio, ascolto e produzione culturale, con particolare attenzione al rapporto tra pratica artistica, riflessione teorica e trasmissione dei saperi.',
       'L’associazione promuove iniziative rivolte a musicisti, studiosi, studenti e pubblico interessato, favorendo occasioni di approfondimento e collaborazione in cui il fenomeno sonoro possa essere affrontato come oggetto artistico, culturale e scientifico.',
@@ -150,14 +149,13 @@ const CONTENT = {
   },
 
   en: {
-    splashSubtitle: 'Cultural Association Milan',
     enter: 'Enter',
     navHome: 'Home',
     menu: 'Menu',
     close: 'Close',
 
     homeKicker: 'Milan · Cultural association',
-    homeTitle: '',
+    homeTitle: 'Resonarium',
     homeParagraphs: [
       'Resonarium is a cultural association based in Milan, active in the fields of music, education, and interdisciplinary research. Its work is oriented toward the creation of contexts for study, listening, and cultural production, with particular attention to the relationship between artistic practice, theoretical reflection, and the transmission of knowledge.',
       'The association promotes initiatives addressed to musicians, scholars, students, and interested audiences, fostering occasions for study and collaboration in which sound may be approached as an artistic, cultural, and scientific object.',
@@ -319,13 +317,13 @@ function NavbarLogoMobile() {
 
 function SplashLogo() {
   return (
-    <div className="relative h-40 w-72 sm:h-56 sm:w-[30rem] lg:h-72 lg:w-[44rem]">
+    <div className="relative h-44 w-72 sm:h-56 sm:w-[30rem] lg:h-72 lg:w-[44rem]">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.24] sm:scale-[1.34]"
+        className="object-contain scale-[1.22] sm:scale-[1.34]"
       />
     </div>
   );
@@ -760,12 +758,6 @@ export default function Page() {
           >
             <div className="splash-shell px-8 sm:px-6">
               <SplashLogo />
-              <h1 className="mt-6 text-[clamp(1.7rem,4vw,3.6rem)] tracking-[0.08em] [font-variant-caps:all-small-caps] text-[var(--foreground)] sm:mt-10">
-                Resonarium
-              </h1>
-              <p className="mt-4 max-w-[21rem] text-[0.74rem] uppercase tracking-[0.22em] text-[var(--foreground-faint)] sm:mt-5 sm:max-w-none sm:text-[0.8rem] sm:tracking-[0.32em]">
-                {text.splashSubtitle}
-              </p>
               <div className="secondary-button mt-8 sm:mt-10">{text.enter}</div>
             </div>
           </button>
@@ -806,7 +798,7 @@ export default function Page() {
                   </nav>
                 </div>
 
-                <div className="shrink-0 items-center gap-3 flex">
+                <div className="shrink-0 flex items-center gap-3">
                   <button
                     onClick={() => setLanguage('it')}
                     className={cn(
