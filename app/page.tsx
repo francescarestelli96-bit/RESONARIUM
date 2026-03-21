@@ -49,16 +49,16 @@ const IT_CONTENT = {
     aboutParagraphs: [
       'Associazione Culturale Resonarium è costituita come associazione senza fini di lucro con sede a Milano, in Via degli Ottoboni 37; la sua durata è illimitata salvo scioglimento deliberato dall’assemblea. Tra i suoi scopi figurano la promozione della cultura musicale, filosofica e scientifica, l’organizzazione di concerti, festival e rassegne, di masterclass e corsi di perfezionamento musicale, di attività didattiche e divulgative, nonché il sostegno a giovani musicisti e ricercatori.',
       'Lo statuto prevede inoltre collaborazioni con scuole, conservatori, università, accademie ed enti di ricerca, insieme alla possibilità di pubblicare materiali e sostenere borse di studio. In questo quadro, Resonarium si configura come una struttura dedicata alla progettazione culturale, alla formazione e alla ricerca.',
-      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Elia Tarizzo, Alberto Chines ed Edoardo Toffoletto. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore scientifico.',
+      'L’associazione nasce formalmente dall’atto costitutivo sottoscritto dai tre soci fondatori Edoardo Toffoletto, Alberto Chines ed Elia Tarizzo. Nel primo Consiglio Direttivo vengono nominati rispettivamente Presidente, Direttore artistico e Direttore scientifico.',
     ],
 
     foundersTitle: 'Fondatori',
     founders: [
       {
         role: 'Presidente',
-        name: 'Elia Tarizzo',
-        bio: 'Socio fondatore e Presidente del primo Consiglio Direttivo. Coordina l’indirizzo istituzionale dell’associazione e ne segue la rappresentanza legale e la visione generale.',
-        image: '/founder-elia.jpg',
+        name: 'Edoardo Toffoletto',
+        bio: 'Presidente del primo Consiglio Direttivo. Nato a Milano il 10 maggio 1991, segue in particolare la dimensione scientifica e i percorsi di studio promossi dall’associazione. Ha conseguito il dottorato in Musica, Storia & Società sotto la direzione di Esteban Buch all’École des Hautes Études en Sciences Sociales di Parigi (2024) e si è laureato in filosofia all’Università di Padova (2013), al King’s College di Londra (2015) e alla Freie-Universität di Berlino (2017). Nel corso della sua formazione è stato corrispondente freelance da Berlino e Parigi, seguendo le rubriche di geopolitica e politica economica per Business Insider Italia (2017-2021) e Il Bollettino. Quindicinnale economico-finanziario (2022). Tra il 2017 e il 2020 ha collaborato con l’Institut de Recherche et d’Innovation del Centre Pompidou di Parigi, diretto da Bernard Stiegler (1952-2020). Ha intrapreso una formazione psicanalitica (2022-2025) alla Scuola di Psicanalisi Freudiana di Milano sotto la direzione di Franco Baldini. Nel 2023 è stato membro della redazione di Equilibri Magazine. Rivista per lo sviluppo sostenibile della Fondazione ENI Enrico Mattei. Attualmente, è professore a contratto di Questioni contemporanee all’Institut Catholique de Paris e collaboratore del Teatro Franco Parenti di Milano.',
+        image: '/founder-edoardo.jpg',
         imagePosition: 'center center',
       },
       {
@@ -70,9 +70,9 @@ const IT_CONTENT = {
       },
       {
         role: 'Direttore scientifico',
-        name: 'Edoardo Toffoletto',
-        bio: 'Socio fondatore e Direttore scientifico del primo Consiglio Direttivo. Nato a Milano il 10 maggio 1991, segue in particolare la dimensione scientifica e i percorsi di studio promossi dall’associazione. Ha conseguito il dottorato in Musica, Storia & Società sotto la direzione di Esteban Buch all’École des Hautes Études en Sciences Sociales di Parigi (2024) e si è laureato in filosofia all’Università di Padova (2013), al King’s College di Londra (2015) e alla Freie-Universität di Berlino (2017). Nel corso della sua formazione è stato corrispondente freelance da Berlino e Parigi seguendo le rubriche di geopolitica e politica economica per Business Insider Italia (2017-2021) e Il Bollettino. Quindicinnale economico-finanziario (2022). Tra il 2017 e il 2020 ha collaborato con l’Institut de Recherche et d’Innovation del Centre Pompidou di Parigi diretto da Bernard Stiegler (1952-2020). Ha intrapreso una formazione psicanalitica (2022-2025) alla Scuola di Psicanalisi Freudiana di Milano sotto la direzione di Franco Baldini. Nel 2023 è stato membro della redazione di Equilibri Magazine. Rivista per lo sviluppo sostenibile della Fondazione ENI Enrico Mattei. Attualmente, è professore a contratto di Questioni contemporanee all’Institut Catholique de Paris e collaboratore del Teatro Franco Parenti di Milano.',
-        image: '/founder-edoardo.jpg',
+        name: 'Elia Tarizzo',
+        bio: 'Nato a Parigi il 28/11/2001. Socio fondatore e Direttore scientifico del primo Consiglio Direttivo. Ha studiato composizione, violino e pianoforte. Si laurea in Filosofia nel 2024 presso l’Università Statale di Milano. Attualmente studia Medicina e chirurgia nell’Università Vita-Salute San Raffaele.',
+        image: '/founder-elia.jpg',
         imagePosition: 'center center',
       },
     ] as Founder[],
@@ -163,16 +163,16 @@ const EN_CONTENT: typeof IT_CONTENT = {
     aboutParagraphs: [
       'The Cultural Association Resonarium is established as a non-profit association based in Milan, Via degli Ottoboni 37; its duration is unlimited unless dissolved by the members’ assembly. Its aims include the promotion of musical, philosophical, and scientific culture, the organisation of concerts, festivals, and series, masterclasses and advanced musical training, educational and public outreach activities, and support for young musicians and researchers.',
       'The statute also provides for collaborations with schools, conservatories, universities, academies, and research bodies, together with the possibility of producing publications and supporting scholarships. In this framework, Resonarium takes shape as a structure devoted to cultural design, education, and research.',
-      'The association is formally founded through the deed of incorporation signed by the three founding members Elia Tarizzo, Alberto Chines, and Edoardo Toffoletto. The first Board appoints them respectively as President, Artistic Director, and Scientific Director.',
+      'The association is formally founded through the deed of incorporation signed by the three founding members Edoardo Toffoletto, Alberto Chines, and Elia Tarizzo. The first Board appoints them respectively as President, Artistic Director, and Scientific Director.',
     ],
 
     foundersTitle: 'Founders',
     founders: [
       {
         role: 'President',
-        name: 'Elia Tarizzo',
-        bio: 'Founding member and President of the first Board of Directors. He coordinates the institutional direction of the association and follows its legal representation and general vision.',
-        image: '/founder-elia.jpg',
+        name: 'Edoardo Toffoletto',
+        bio: 'President of the first Board of Directors. Born in Milan on 10 May 1991, he focuses in particular on the scientific dimension and the study paths promoted by the association. He received his PhD in Music, History & Society under the supervision of Esteban Buch at the École des Hautes Études en Sciences Sociales in Paris (2024), and graduated in philosophy from the University of Padua (2013), King’s College London (2015), and the Freie Universität Berlin (2017). During his education, he worked as a freelance correspondent from Berlin and Paris, covering geopolitics and political economy for Business Insider Italia (2017-2021) and Il Bollettino. Quindicinnale economico-finanziario (2022). Between 2017 and 2020 he collaborated with the Institut de Recherche et d’Innovation at the Centre Pompidou in Paris, directed by Bernard Stiegler (1952-2020). He undertook psychoanalytic training (2022-2025) at the Scuola di Psicanalisi Freudiana in Milan under the direction of Franco Baldini. In 2023 he was a member of the editorial board of Equilibri Magazine, the journal for sustainable development of the Fondazione ENI Enrico Mattei. He is currently adjunct professor of Contemporary Questions at the Institut Catholique de Paris and collaborator of Teatro Franco Parenti in Milan.',
+        image: '/founder-edoardo.jpg',
         imagePosition: 'center center',
       },
       {
@@ -184,9 +184,9 @@ const EN_CONTENT: typeof IT_CONTENT = {
       },
       {
         role: 'Scientific Director',
-        name: 'Edoardo Toffoletto',
-        bio: 'Founding member and Scientific Director of the first Board of Directors. Born in Milan on 10 May 1991, he is particularly responsible for the scientific dimension and the study programmes promoted by the association. He received his PhD in Music, History & Society under the supervision of Esteban Buch at the École des Hautes Études en Sciences Sociales in Paris (2024), and previously graduated in philosophy at the University of Padua (2013), King’s College London (2015), and the Freie Universität Berlin (2017). During his formation, he worked as a freelance correspondent from Berlin and Paris, covering geopolitics and political economy for Business Insider Italia (2017-2021) and Il Bollettino. Quindicinnale economico-finanziario (2022). Between 2017 and 2020 he collaborated with the Institut de Recherche et d’Innovation at the Centre Pompidou in Paris, directed by Bernard Stiegler (1952-2020). He also undertook psychoanalytic training (2022-2025) at the Scuola di Psicanalisi Freudiana in Milan under the direction of Franco Baldini. In 2023 he was a member of the editorial board of Equilibri Magazine, the journal for sustainable development of the Fondazione ENI Enrico Mattei. He is currently adjunct professor of Contemporary Questions at the Institut Catholique de Paris and collaborator of Teatro Franco Parenti in Milan.',
-        image: '/founder-edoardo.jpg',
+        name: 'Elia Tarizzo',
+        bio: 'Born in Paris on 28/11/2001. Founding member and Scientific Director of the first Board of Directors. He studied composition, violin, and piano. He graduated in Philosophy in 2024 from the University of Milan and is currently studying Medicine and Surgery at Vita-Salute San Raffaele University.',
+        image: '/founder-elia.jpg',
         imagePosition: 'center center',
       },
     ] as Founder[],
