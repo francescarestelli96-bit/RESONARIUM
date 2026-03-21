@@ -1,12 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Playfair_Display } from 'next/font/google';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700'],
-});
 
 export const metadata: Metadata = {
   title: 'RESONARIUM',
@@ -21,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">
-      <body className={playfair.variable}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

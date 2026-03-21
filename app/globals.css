@@ -31,7 +31,7 @@ body {
     radial-gradient(circle at bottom right, rgba(31, 39, 51, 0.04), transparent 22%),
     linear-gradient(to bottom, #f8f5ef, #f3eee6);
   color: var(--foreground);
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -375,6 +375,57 @@ svg {
   overflow-x: hidden;
 }
 
+.mobile-utility-button {
+  min-width: 78px;
+  padding-inline: 1rem;
+  font-size: 0.67rem;
+}
+
+.mobile-language-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.mobile-language-button {
+  min-width: 64px;
+}
+
+.mobile-menu-link {
+  position: relative;
+  width: fit-content;
+  padding-bottom: 0.45rem;
+  text-align: left;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: var(--foreground);
+  font-variant-caps: all-small-caps;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.mobile-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(139, 122, 93, 0.42);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms ease;
+}
+
+.mobile-menu-link:hover {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.mobile-menu-link:hover::after {
+  transform: scaleX(1);
+}
+
 .founder-image-shell {
   aspect-ratio: 4 / 5;
   min-height: 280px;
@@ -470,18 +521,18 @@ svg {
   }
 
   .container-shell {
-    width: min(100% - 2.75rem, 1240px);
+    width: min(100% - 6rem, 1240px);
   }
 
   .page-shell {
     min-height: auto;
     display: block;
-    padding: 1.9rem 0 3.75rem;
+    padding: 3.6rem 0 6.4rem;
   }
 
   .page-content {
-    max-width: 100%;
-    padding-inline: 0;
+    max-width: 30rem;
+    padding-inline: 0.75rem;
   }
 
   .page-title {
@@ -491,8 +542,8 @@ svg {
   }
 
   .section-title {
-    font-size: clamp(1.48rem, 6vw, 2.1rem);
-    line-height: 1.1;
+    font-size: clamp(1.62rem, 6.5vw, 2.2rem);
+    line-height: 1.14;
     letter-spacing: 0.035em;
   }
 
@@ -502,13 +553,59 @@ svg {
   }
 
   .body-copy {
-    font-size: 0.95rem;
-    line-height: 1.92;
+    font-size: 1.02rem;
+    line-height: 2.08;
+  }
+
+  .body-copy p + p {
+    margin-top: 1.9rem;
   }
 
   .kicker {
     font-size: 0.63rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.24em;
+  }
+
+  .secondary-button {
+    min-height: 48px;
+    padding: 0 1.25rem;
+  }
+
+  .primary-button {
+    min-height: 56px;
+    padding: 0 1.8rem;
+  }
+
+  .form-input {
+    height: 58px;
+    padding: 0 1.1rem;
+  }
+
+  .form-textarea {
+    min-height: 220px;
+    padding: 1.1rem;
+  }
+
+  .splash-shell {
+    gap: 1.15rem;
+  }
+
+  .mobile-menu-overlay .container-shell {
+    width: min(100% - 6.25rem, 1240px);
+  }
+
+  .mobile-menu-link {
+    font-size: clamp(1.3rem, 5.6vw, 1.65rem);
+    padding-bottom: 0.75rem;
+  }
+
+  .mobile-language-row {
+    gap: 0.9rem;
+  }
+
+  .mobile-utility-button {
+    min-width: 84px;
+    padding-inline: 1.1rem;
   }
 
   .founder-image-shell {

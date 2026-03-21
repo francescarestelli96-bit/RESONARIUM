@@ -32,8 +32,7 @@ const NAV_ITEMS: {
   { key: 'contatti', label: { it: 'Contatti', en: 'Contacts' } },
 ];
 
-const CONTENT = {
-  it: {
+const IT_CONTENT = {
     enter: 'Entra',
     navHome: 'Home',
     menu: 'Menu',
@@ -145,9 +144,9 @@ const CONTENT = {
     footerCredits: 'Credits',
     footerPolicy: 'Policy',
     imageMissing: 'Immagine non disponibile',
-  },
+};
 
-  en: {
+const EN_CONTENT: typeof IT_CONTENT = {
     enter: 'Enter',
     navHome: 'Home',
     menu: 'Menu',
@@ -259,8 +258,12 @@ const CONTENT = {
     footerCredits: 'Credits',
     footerPolicy: 'Policy',
     imageMissing: 'Image unavailable',
-  },
-} satisfies Record<Language, any>;
+};
+
+const CONTENT: Record<Language, typeof IT_CONTENT> = {
+  it: IT_CONTENT,
+  en: EN_CONTENT,
+};
 
 function cn(...values: Array<string | false | null | undefined>) {
   return values.filter(Boolean).join(' ');
@@ -301,13 +304,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-24 w-64">
+    <div className="relative h-32 w-80 translate-y-4 sm:h-24 sm:w-64 sm:translate-y-0">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.85]"
+        className="object-contain scale-[2.05] sm:scale-[1.85]"
       />
     </div>
   );
@@ -338,7 +341,7 @@ function FounderCard({
   const [imageError, setImageError] = useState(false);
 
   return (
-    <article className="grid gap-6 border-t border-[var(--line)] pt-8 md:grid-cols-[220px_1fr] md:gap-10">
+    <article className="grid gap-8 border-t border-[var(--line)] pt-10 md:grid-cols-[220px_1fr] md:gap-10 md:pt-8">
       <div className="founder-image-shell overflow-hidden rounded-[22px] bg-[var(--background-soft)]">
         {!imageError ? (
           <Image
@@ -421,7 +424,7 @@ function ContactForm({ language }: { language: Language }) {
     };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10">
+    <form onSubmit={handleSubmit} className="mt-12 md:mt-10">
       <div className="grid gap-5">
         <div>
           <label htmlFor="contact-name" className="mb-2 block text-sm text-[var(--foreground-soft)]">
@@ -504,7 +507,7 @@ function HomeSection({
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row md:mt-8">
           <button
             onClick={() => onNavigate('chi-siamo')}
             className="primary-button"
@@ -539,9 +542,9 @@ function AboutSection({ language }: { language: Language }) {
           ))}
         </div>
 
-        <div className="mt-14">
+        <div className="mt-16 md:mt-14">
           <p className="kicker">{text.foundersTitle}</p>
-          <div className="mt-8 space-y-12">
+          <div className="mt-10 space-y-14 md:mt-8 md:space-y-12">
             {text.founders.map((founder) => (
               <div key={founder.name}>
                 <FounderCard
@@ -550,7 +553,7 @@ function AboutSection({ language }: { language: Language }) {
                 />
 
                 {founder.name === 'Edoardo Toffoletto' && (
-                  <div className="mt-8 md:mt-10 md:pl-[260px]">
+                  <div className="mt-10 md:mt-10 md:pl-[260px]">
                     <div className="border-t border-[var(--line)] pt-8">
                       <p className="kicker">{text.researchInterestsTitle}</p>
                       <div className="body-copy mt-5">
@@ -558,7 +561,7 @@ function AboutSection({ language }: { language: Language }) {
                       </div>
                     </div>
 
-                    <div className="mt-8 border-t border-[var(--line)] pt-8">
+                    <div className="mt-10 border-t border-[var(--line)] pt-8 md:mt-8">
                       <p className="kicker">{text.scientificPublicationsTitle}</p>
                       <div className="body-copy mt-5">
                         {text.scientificPublications.map((item: string) => (
@@ -609,7 +612,7 @@ function ActivitiesSection({ language }: { language: Language }) {
           <p>{text.activitiesIntro}</p>
         </div>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-14 space-y-12 md:mt-12 md:space-y-10">
           {text.activitiesItems.map((item, index) => (
             <section key={item.title} className="border-t border-[var(--line)] pt-8">
               <p className="kicker">{String(index + 1).padStart(2, '0')}</p>
@@ -640,7 +643,7 @@ function ContactsSection({ language }: { language: Language }) {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2">
+        <div className="mt-14 grid gap-12 md:mt-12 md:grid-cols-2 md:gap-10">
           <div>
             <p className="kicker">{text.addressLabel}</p>
             <div className="mt-5 space-y-2 text-lg leading-9 text-[var(--foreground-soft)]">
@@ -753,9 +756,9 @@ export default function Page() {
             className="splash-button"
             aria-label={language === 'it' ? 'Entra nel sito' : 'Enter the site'}
           >
-            <div className="splash-shell px-8 sm:px-6">
+            <div className="splash-shell px-10 sm:px-6">
               <SplashLogo />
-              <div className="secondary-button mt-8 sm:mt-10">{text.enter}</div>
+              <div className="secondary-button mt-10 sm:mt-10">{text.enter}</div>
             </div>
           </button>
         </div>
@@ -817,11 +820,11 @@ export default function Page() {
                 </div>
               </div>
 
-              <div className="flex min-h-[108px] flex-col justify-center gap-3 md:hidden">
-                <div className="flex items-center justify-between gap-4">
+              <div className="flex min-h-[152px] flex-col justify-center gap-5 py-4 md:hidden">
+                <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 shrink items-center"
+                    className="flex min-w-0 shrink items-center pt-4"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />
@@ -829,18 +832,18 @@ export default function Page() {
 
                   <button
                     onClick={() => setMobileMenuOpen(true)}
-                    className="secondary-button px-4 text-[0.67rem]"
+                    className="secondary-button mobile-utility-button"
                     aria-label={text.menu}
                   >
                     {text.menu}
                   </button>
                 </div>
 
-                <div className="flex items-center justify-end gap-2">
+                <div className="mobile-language-row">
                   <button
                     onClick={() => setLanguage('it')}
                     className={cn(
-                      'secondary-button px-3 text-[0.67rem]',
+                      'secondary-button mobile-utility-button mobile-language-button',
                       language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -849,7 +852,7 @@ export default function Page() {
                   <button
                     onClick={() => setLanguage('en')}
                     className={cn(
-                      'secondary-button px-3 text-[0.67rem]',
+                      'secondary-button mobile-utility-button mobile-language-button',
                       language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -862,11 +865,11 @@ export default function Page() {
 
           {mobileMenuOpen && (
             <div className="mobile-menu-overlay menu-fade-in md:hidden">
-              <div className="container-shell flex min-h-screen flex-col py-8">
-                <div className="flex items-center justify-between gap-4">
+              <div className="container-shell flex min-h-screen flex-col py-12">
+                <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 items-center"
+                    className="flex min-w-0 items-center pt-4"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />
@@ -874,16 +877,16 @@ export default function Page() {
 
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="secondary-button px-4 text-[0.67rem]"
+                    className="secondary-button mobile-utility-button"
                   >
                     {text.close}
                   </button>
                 </div>
 
-                <div className="mt-14 flex flex-1 flex-col justify-center gap-8">
+                <div className="mt-20 flex flex-1 flex-col justify-center gap-12">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="text-left text-[1.2rem] [font-variant-caps:all-small-caps] tracking-[0.05em] text-[var(--foreground)]"
+                    className="mobile-menu-link"
                   >
                     {text.navHome}
                   </button>
@@ -892,18 +895,18 @@ export default function Page() {
                     <button
                       key={item.key}
                       onClick={() => navigateTo(item.key)}
-                      className="text-left text-[1.2rem] [font-variant-caps:all-small-caps] tracking-[0.05em] text-[var(--foreground)]"
+                      className="mobile-menu-link"
                     >
                       {item.label[language]}
                     </button>
                   ))}
                 </div>
 
-                <div className="mt-10 flex items-center gap-3">
+                <div className="mobile-language-row mt-14 justify-start">
                   <button
                     onClick={() => setLanguage('it')}
                     className={cn(
-                      'secondary-button text-[0.67rem]',
+                      'secondary-button mobile-utility-button mobile-language-button',
                       language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -912,7 +915,7 @@ export default function Page() {
                   <button
                     onClick={() => setLanguage('en')}
                     className={cn(
-                      'secondary-button text-[0.67rem]',
+                      'secondary-button mobile-utility-button mobile-language-button',
                       language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
                     )}
                   >
@@ -927,7 +930,7 @@ export default function Page() {
             {renderSection()}
           </SectionTransition>
 
-          <footer className="border-t border-[var(--line)] py-8">
+          <footer className="border-t border-[var(--line)] py-10 md:py-8">
             <div className="container-shell">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-[0.78rem] uppercase tracking-[0.26em] text-[var(--foreground-faint)]">
