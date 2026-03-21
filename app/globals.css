@@ -240,9 +240,9 @@ svg {
 .page-shell {
   min-height: calc(100vh - 126px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 3.5rem 0 5rem;
+  padding: 2.5rem 0 5rem;
   width: 100%;
 }
 
@@ -476,7 +476,7 @@ svg {
   .page-shell {
     min-height: auto;
     display: block;
-    padding: 2.75rem 0 3.75rem;
+    padding: 1.9rem 0 3.75rem;
   }
 
   .page-content {

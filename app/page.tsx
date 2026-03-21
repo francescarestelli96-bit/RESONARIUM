@@ -40,7 +40,6 @@ const CONTENT = {
     close: 'Chiudi',
 
     homeKicker: 'Milano · Associazione culturale',
-    homeTitle: 'Resonarium',
     homeParagraphs: [
       'Resonarium è un’associazione culturale con sede a Milano, attiva nell’ambito della musica, della formazione e della ricerca interdisciplinare. La sua attività è orientata alla costruzione di contesti di studio, ascolto e produzione culturale, con particolare attenzione al rapporto tra pratica artistica, riflessione teorica e trasmissione dei saperi.',
       'L’associazione promuove iniziative rivolte a musicisti, studiosi, studenti e pubblico interessato, favorendo occasioni di approfondimento e collaborazione in cui il fenomeno sonoro possa essere affrontato come oggetto artistico, culturale e scientifico.',
@@ -155,7 +154,6 @@ const CONTENT = {
     close: 'Close',
 
     homeKicker: 'Milan · Cultural association',
-    homeTitle: 'Resonarium',
     homeParagraphs: [
       'Resonarium is a cultural association based in Milan, active in the fields of music, education, and interdisciplinary research. Its work is oriented toward the creation of contexts for study, listening, and cultural production, with particular attention to the relationship between artistic practice, theoretical reflection, and the transmission of knowledge.',
       'The association promotes initiatives addressed to musicians, scholars, students, and interested audiences, fostering occasions for study and collaboration in which sound may be approached as an artistic, cultural, and scientific object.',
@@ -303,13 +301,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-16 w-44">
+    <div className="relative h-24 w-64">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.55]"
+        className="object-contain scale-[1.85]"
       />
     </div>
   );
@@ -499,15 +497,14 @@ function HomeSection({
     <section className="page-shell">
       <div className="page-content">
         <p className="kicker">{text.homeKicker}</p>
-        <h1 className="page-title mt-6 sm:mt-8">{text.homeTitle}</h1>
 
-        <div className="body-copy mt-8 sm:mt-10 max-w-4xl">
+        <div className="body-copy mt-4 sm:mt-5 max-w-4xl">
           {text.homeParagraphs.map((paragraph: string) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-8 flex flex-wrap gap-4">
           <button
             onClick={() => onNavigate('chi-siamo')}
             className="primary-button"
