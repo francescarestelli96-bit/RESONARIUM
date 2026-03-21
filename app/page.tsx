@@ -304,13 +304,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-20 w-52 sm:h-24 sm:w-64">
+    <div className="relative h-24 w-64 sm:h-24 sm:w-64">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.68] sm:scale-[1.85]"
+        className="object-contain scale-[1.86] sm:scale-[1.85]"
       />
     </div>
   );
