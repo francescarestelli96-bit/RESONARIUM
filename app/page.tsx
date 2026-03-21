@@ -330,6 +330,54 @@ function SplashLogo() {
   );
 }
 
+function LanguageSwitch({
+  language,
+  onChange,
+  align = 'end',
+}: {
+  language: Language;
+  onChange: (language: Language) => void;
+  align?: 'start' | 'end';
+}) {
+  return (
+    <div className={cn('language-switch', align === 'start' && 'justify-start')}>
+      <button
+        onClick={() => onChange('it')}
+        className={cn('language-switch-button', language === 'it' && 'active')}
+        aria-pressed={language === 'it'}
+      >
+        ITA
+      </button>
+      <button
+        onClick={() => onChange('en')}
+        className={cn('language-switch-button', language === 'en' && 'active')}
+        aria-pressed={language === 'en'}
+      >
+        ENG
+      </button>
+    </div>
+  );
+}
+
+function MenuTrigger({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <button onClick={onClick} className="menu-trigger" aria-label={label}>
+      <span className="menu-trigger-lines" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </span>
+      <span>{label}</span>
+    </button>
+  );
+}
+
 function FounderCard({
   role,
   name,
@@ -798,26 +846,7 @@ export default function Page() {
                   </nav>
                 </div>
 
-                <div className="shrink-0 flex items-center gap-3">
-                  <button
-                    onClick={() => setLanguage('it')}
-                    className={cn(
-                      'secondary-button',
-                      language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ITA
-                  </button>
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={cn(
-                      'secondary-button',
-                      language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ENG
-                  </button>
-                </div>
+                <LanguageSwitch language={language} onChange={setLanguage} />
               </div>
 
               <div className="flex min-h-[152px] flex-col justify-center gap-5 py-4 md:hidden">
@@ -830,35 +859,10 @@ export default function Page() {
                     <NavbarLogoMobile />
                   </button>
 
-                  <button
-                    onClick={() => setMobileMenuOpen(true)}
-                    className="secondary-button mobile-utility-button"
-                    aria-label={text.menu}
-                  >
-                    {text.menu}
-                  </button>
+                  <MenuTrigger label={text.menu} onClick={() => setMobileMenuOpen(true)} />
                 </div>
 
-                <div className="mobile-language-row">
-                  <button
-                    onClick={() => setLanguage('it')}
-                    className={cn(
-                      'secondary-button mobile-utility-button mobile-language-button',
-                      language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ITA
-                  </button>
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={cn(
-                      'secondary-button mobile-utility-button mobile-language-button',
-                      language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ENG
-                  </button>
-                </div>
+                <LanguageSwitch language={language} onChange={setLanguage} />
               </div>
             </div>
           </header>
@@ -875,12 +879,7 @@ export default function Page() {
                     <NavbarLogoMobile />
                   </button>
 
-                  <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="secondary-button mobile-utility-button"
-                  >
-                    {text.close}
-                  </button>
+                  <MenuTrigger label={text.close} onClick={() => setMobileMenuOpen(false)} />
                 </div>
 
                 <div className="mt-20 flex flex-1 flex-col justify-center gap-12">
@@ -902,25 +901,8 @@ export default function Page() {
                   ))}
                 </div>
 
-                <div className="mobile-language-row mt-14 justify-start">
-                  <button
-                    onClick={() => setLanguage('it')}
-                    className={cn(
-                      'secondary-button mobile-utility-button mobile-language-button',
-                      language === 'it' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ITA
-                  </button>
-                  <button
-                    onClick={() => setLanguage('en')}
-                    className={cn(
-                      'secondary-button mobile-utility-button mobile-language-button',
-                      language === 'en' && 'border-[rgba(139,122,93,0.42)] bg-[rgba(139,122,93,0.08)]'
-                    )}
-                  >
-                    ENG
-                  </button>
+                <div className="mt-14">
+                  <LanguageSwitch language={language} onChange={setLanguage} align="start" />
                 </div>
               </div>
             </div>
