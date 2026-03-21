@@ -713,12 +713,12 @@ svg {
 
   .mobile-header-row {
     display: block;
-    min-height: 116px;
-    padding: 1rem 0 0.95rem;
+    min-height: 126px;
+    padding: 1rem 0 1rem;
   }
 
   .mobile-logo-shell {
-    height: 8.4rem;
+    height: 9.6rem;
   }
 
   .mobile-menu-link {
