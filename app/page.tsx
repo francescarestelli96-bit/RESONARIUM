@@ -34,14 +34,14 @@ const NAV_ITEMS: {
 
 const CONTENT = {
   it: {
-    splashSubtitle: 'RESONARIUM - Associazione Culturale Milano',
+    splashSubtitle: 'Associazione Culturale Milano',
     enter: 'Entra',
     navHome: 'Home',
     menu: 'Menu',
     close: 'Chiudi',
 
     homeKicker: 'Milano · Associazione culturale',
-    homeTitle: 'Resonarium',
+    homeTitle: '',
     homeParagraphs: [
       'Resonarium è un’associazione culturale con sede a Milano, attiva nell’ambito della musica, della formazione e della ricerca interdisciplinare. La sua attività è orientata alla costruzione di contesti di studio, ascolto e produzione culturale, con particolare attenzione al rapporto tra pratica artistica, riflessione teorica e trasmissione dei saperi.',
       'L’associazione promuove iniziative rivolte a musicisti, studiosi, studenti e pubblico interessato, favorendo occasioni di approfondimento e collaborazione in cui il fenomeno sonoro possa essere affrontato come oggetto artistico, culturale e scientifico.',
@@ -150,14 +150,14 @@ const CONTENT = {
   },
 
   en: {
-    splashSubtitle: 'RESONARIUM - Cultural Association Milan',
+    splashSubtitle: 'Cultural Association Milan',
     enter: 'Enter',
     navHome: 'Home',
     menu: 'Menu',
     close: 'Close',
 
     homeKicker: 'Milan · Cultural association',
-    homeTitle: 'Resonarium',
+    homeTitle: '',
     homeParagraphs: [
       'Resonarium is a cultural association based in Milan, active in the fields of music, education, and interdisciplinary research. Its work is oriented toward the creation of contexts for study, listening, and cultural production, with particular attention to the relationship between artistic practice, theoretical reflection, and the transmission of knowledge.',
       'The association promotes initiatives addressed to musicians, scholars, students, and interested audiences, fostering occasions for study and collaboration in which sound may be approached as an artistic, cultural, and scientific object.',
