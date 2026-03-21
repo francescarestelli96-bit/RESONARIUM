@@ -310,7 +310,7 @@ function NavbarLogoMobile() {
         alt="Resonarium"
         fill
         priority
-        className="object-contain"
+        className="object-contain scale-[1.18]"
       />
     </div>
   );
