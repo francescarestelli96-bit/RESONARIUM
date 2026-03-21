@@ -304,13 +304,13 @@ function NavbarLogoDesktop() {
 
 function NavbarLogoMobile() {
   return (
-    <div className="relative h-24 w-64 sm:h-24 sm:w-64">
+    <div className="mobile-logo-shell">
       <Image
         src={LOGO_SRC}
         alt="Resonarium"
         fill
         priority
-        className="object-contain scale-[1.86] sm:scale-[1.85]"
+        className="object-contain"
       />
     </div>
   );
@@ -853,7 +853,7 @@ export default function Page() {
                 <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 shrink items-center"
+                    className="mobile-logo-button"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />
@@ -874,7 +874,7 @@ export default function Page() {
                 <div className="flex items-start justify-between gap-4">
                   <button
                     onClick={() => navigateTo('home')}
-                    className="flex min-w-0 items-center"
+                    className="mobile-logo-button"
                     aria-label={language === 'it' ? 'Vai alla home' : 'Go to home'}
                   >
                     <NavbarLogoMobile />
